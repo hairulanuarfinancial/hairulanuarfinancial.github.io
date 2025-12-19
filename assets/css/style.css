@@ -80,3 +80,45 @@ hr {
   border-top: 1px solid #e5e5e5;
   margin: 30px 0;
 }
+
+/* ===== Typography Rhythm ===== */
+
+/* Paragraph rhythm */
+p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Headline spacing */
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+/* Lists rhythm */
+ul, ol {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Reading width refinement */
+p, li {
+  max-width: 680px;
+}
+
+/* Stronger hierarchy separation */
+h2 + p {
+  margin-top: 12px;
+}
+
+/* Footer breathing space */
+footer p {
+  margin-top: 20px;
+}
