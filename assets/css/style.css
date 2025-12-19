@@ -2,8 +2,6 @@
   --accent-color: #1f3d2b; /* deep muted green */
 }
 
-
-
 /* ===== Swiss Style Base ===== */
 
 body {
@@ -78,6 +76,8 @@ a {
 
 a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 /* Navigation hover accent */
@@ -136,10 +136,6 @@ footer p {
 a {
   color: var(--accent-color);
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* ===== Navigation ===== */
