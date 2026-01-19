@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perjalanan Kewangan Bersepadu | Hairulanuar Financial</title>
-    <meta name="description" content="Tiga fasa perjalanan kewangan untuk keluarga Muslim: Takaful Keluarga, Pelaburan Patuh Syariah, dan Perancangan Persaraan yang bersepadu.">
+    <meta name="description" content="Tiga fasa kehidupan kewangan untuk keluarga Muslim: perlindungan, pembinaan kekayaan, dan persaraan bermakna. Satu perjalanan yang bersambung.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
             --primary: #000000;
             --secondary: #555555;
             --accent: #2A5CAA;
-            --accent-light: #E8F0FA;
             --light: #F8F8F8;
             --border: #E0E0E0;
             --grid-gap: 24px;
@@ -47,6 +46,7 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
+            text-align: center;
         }
         
         h2 {
@@ -58,7 +58,7 @@
         
         h3 {
             font-size: 1.25rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
             margin-bottom: 1rem;
             color: var(--accent);
         }
@@ -73,6 +73,32 @@
             font-weight: 300;
             color: var(--secondary);
             margin-bottom: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Section Styling */
+        .section-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 4rem auto;
+            position: relative;
+            max-width: 800px;
+        }
+        
+        .section-divider::after {
+            content: "⸻";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 0 1rem;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            letter-spacing: 0.5em;
         }
         
         /* Layout */
@@ -167,53 +193,15 @@
             padding: 4rem 0;
         }
         
-        .hero { margin-bottom: 5rem; }
-        
-        .content-main { max-width: 800px; margin: 0 auto; }
-        
-        /* Journey Phases Grid */
-        .journey-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
-            margin: 4rem 0;
+        .content-main {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        @media (min-width: 768px) {
-            .journey-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 3rem;
-            }
+        /* Phase Sections */
+        .phase-section {
+            margin-bottom: 3rem;
         }
-        
-        .phase-card {
-            border-top: 2px solid var(--accent);
-            padding-top: 1.5rem;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .phase-number {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
-        }
-        
-        .phase-service-tag {
-            display: inline-block;
-            background-color: var(--accent-light);
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-        }
-        
-        .phase-content { flex-grow: 1; }
         
         /* CTA Section - Consistent with Panduan */
         .cta-section {
@@ -342,6 +330,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 2.25rem; }
+            h2 { font-size: 1.5rem; margin-top: 3rem; }
             .lead { font-size: 1.125rem; }
             nav {
                 display: none;
@@ -359,23 +348,11 @@
             .mobile-menu-btn { display: block; }
             .cta-section { padding: 2rem; }
             main { padding: 3rem 0; }
-            .journey-grid { gap: 3rem; }
-        }
-        
-        /* Journey-specific */
-        .journey-intro { max-width: 800px; margin-bottom: 4rem; }
-        
-        .phase-subtitle {
-            font-style: italic;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .integration-section {
-            margin: 5rem 0;
-            padding: 2.5rem;
-            background-color: var(--light);
-            border-left: 3px solid var(--accent);
+            .section-divider { margin: 3rem auto; }
+            .section-divider::after {
+                font-size: 1rem;
+                letter-spacing: 0.3em;
+            }
         }
     </style>
 </head>
@@ -405,134 +382,163 @@
             <div class="content-main">
                 <!-- Hero Section -->
                 <section class="hero">
-                    <h1>Perjalanan Kewangan yang Bermakna</h1>
-                    <div class="journey-intro">
-                        <p class="lead">
-                            Kewangan keluarga yang kukuh tidak dibina dalam sehari. 
-                            Ia adalah perjalanan yang melalui fasa-fasa kehidupan, 
-                            setiap satunya memerlukan asas yang berbeza.
-                        </p>
-                        <p>
-                            Di sini, kami melihatnya sebagai tiga bab yang saling berkait — 
-                            bermula dengan perlindungan, berkembang dengan pelaburan berniat, 
-                            dan matang ke arah kebebasan yang bermakna.
-                        </p>
-                    </div>
+                    <h1>Tiga Fasa Kehidupan.<br>Satu Perjalanan.</h1>
+                    <p class="lead">
+                        Keperluan kewangan keluarga berubah mengikut fasa hidup.<br>
+                        Itu perkara biasa.
+                    </p>
+                    <p>
+                        Apa yang jarang dibincangkan ialah bagaimana semua fasa ini sebenarnya bersambung — 
+                        satu keputusan hari ini menjadi asas kepada ketenangan esok.
+                    </p>
+                    <p>
+                        Kami tidak melihat kewangan sebagai senarai produk.<br>
+                        Kami melihatnya sebagai satu perjalanan yang berkembang bersama kehidupan anda.
+                    </p>
                 </section>
 
-                <!-- Three Phase Journey Grid -->
-                <div class="journey-grid">
-                    <!-- Phase 1: Takaful -->
-                    <article class="phase-card">
-                        <div class="phase-number">Bab Pertama</div>
-                        <span class="phase-service-tag">Perlindungan Keluarga</span>
-                        <h2>Apabila Rasa Bimbang Perlu Dijadikan Ketenangan</h2>
-                        <p class="phase-subtitle"><em>Melalui Takaful Keluarga</em></p>
-                        
-                        <div class="phase-content">
-                            <p>
-                                Ini untuk saat anda mula sedar betapa besarnya tanggungjawab terhadap keluarga. 
-                                Untuk "bagaimana jika" yang kadang-kadang membuatkan anda terjaga di malam hari.
-                            </p>
-                            <p>
-                                Kami bercakap tentang <strong>Takaful Keluarga bukan sebagai produk, 
-                                tetapi sebagai janji</strong> — satu cara untuk memastikan yang tersayang 
-                                terus terjamin walau apa yang terjadi.
-                            </p>
-                            <p>
-                                Di sini, kami membantu anda membina <strong>bukan sekadar perisai, 
-                                tetapi fondasi</strong>. Fondasi yang membolehkan anda bernafas 
-                                dengan lebih lega, kerana tahu amanah terbesar anda telah dilindungi 
-                                dengan cara yang selari dengan nilai.
-                            </p>
-                        </div>
-                    </article>
+                <!-- Divider -->
+                <div class="section-divider"></div>
 
-                    <!-- Phase 2: Investments -->
-                    <article class="phase-card">
-                        <div class="phase-number">Bab Seterusnya</div>
-                        <span class="phase-service-tag">Pertumbuhan Berniat</span>
-                        <h2>Apabila Asas Sudah Kukuh, Kekayaan Mula Ditanam</h2>
-                        <p class="phase-subtitle"><em>Melalui Pelaburan Patuh Syariah</em></p>
-                        
-                        <div class="phase-content">
-                            <p>
-                                Dengan fondasi perlindungan yang kukuh, fikiran bebas untuk memandang ke hadapan. 
-                                Ke arah pendidikan anak-anak, rumah idaman, haji bersama keluarga.
-                            </p>
-                            <p>
-                                Di fasa ini, kami menjadi rakan untuk <strong>berkembang dengan berkat dan niat</strong>. 
-                                Kami bantu anda mengenali peluang pelaburan yang melalui penyaringan Syariah yang telus, 
-                                memastikan setiap ringgit berkembang dengan cara yang anda redhai.
-                            </p>
-                            <p>
-                                Ini mengenai <strong>kesabaran, bukan kepantasan</strong>. Tentang disiplin konsisten, 
-                                bukan spekulasi tergesa-gesa. Kami bimbing anda membina kekayaan yang 
-                                tidak hanya kelihatan di kertas kenyataan, tetapi dirasai dalam ketenangan hidup.
-                            </p>
-                        </div>
-                    </article>
+                <!-- Phase 1: Protection -->
+                <section class="phase-section">
+                    <h2>Fasa Pertama: Melindungi Asas</h2>
+                    <p>
+                        Kebanyakan orang bermula di sini.
+                    </p>
+                    <p>
+                        Anda sedang membina keluarga.<br>
+                        Tanggungjawab bertambah.<br>
+                        Dan soalan yang senyap tetapi berat mula muncul:
+                    </p>
+                    <p>
+                        <em>"Kalau sesuatu berlaku, adakah mereka benar-benar terjaga?"</em>
+                    </p>
+                    <p>
+                        Perlindungan bukan tentang polisi.<br>
+                        Ia tentang memastikan pendidikan anak, kehidupan pasangan, dan maruah keluarga 
+                        tidak runtuh apabila hidup diuji.
+                    </p>
+                    <p>
+                        Pendekatan kami melalui Takaful Keluarga berlandaskan prinsip tolong-menolong — 
+                        satu cara yang praktikal dan patuh Syariah untuk saling menjamin, tanpa rasa ragu.
+                    </p>
+                    <p>
+                        Apabila asas ini terjaga, sesuatu berubah.<br>
+                        Anda boleh meneruskan hidup dengan lebih yakin, dan tidur dengan fikiran yang lebih tenang.
+                    </p>
+                </section>
 
-                    <!-- Phase 3: Retirement -->
-                    <article class="phase-card">
-                        <div class="phase-number">Bab Kematangan</div>
-                        <span class="phase-service-tag">Kebebasan Bermakna</span>
-                        <h2>Apabila Hasil Dituaikan, Hidup Bebas Dijalani</h2>
-                        <p class="phase-subtitle"><em>Melalui Perancangan Persaraan & Warisan</em></p>
-                        
-                        <div class="phase-content">
-                            <p>
-                                Hasil dari penanaman selama ini akhirnya boleh dituai. Ini fasa di mana 
-                                kerja menjadi pilihan, dan anda mempunyai kebebasan untuk menentukan 
-                                bagaimana menghabiskan masa berharga anda.
-                            </p>
-                            <p>
-                                Kami bantu anda merancang <strong>peralihan yang lancar dan penuh makna</strong>. 
-                                Bukan sekadar pengiraan angka, tetapi memastikan aliran pendapatan kekal 
-                                halal, dan kekayaan yang dibina boleh diwariskan dengan niat yang jelas 
-                                — menurut lunas Islam dan kehendak hati.
-                            </p>
-                            <p>
-                                Inilah matlamat akhir: <strong>kebebasan sebenar</strong>. Kebebasan untuk memberi tumpuan 
-                                kepada apa yang paling bermakna, dengan ketenangan bahawa urusan dunia 
-                                telah diatur dengan baik.
-                            </p>
-                        </div>
-                    </article>
-                </div>
+                <!-- Divider -->
+                <div class="section-divider"></div>
+
+                <!-- Phase 2: Building -->
+                <section class="phase-section">
+                    <h2>Fasa Kedua: Membina dengan Niat</h2>
+                    <p>
+                        Apabila perlindungan sudah wujud, ruang berfikir menjadi lebih luas.
+                    </p>
+                    <p>
+                        Fikiran mula bergerak ke hadapan —<br>
+                        pendidikan anak, rumah yang stabil, perjalanan ibadah bersama keluarga.
+                    </p>
+                    <p>
+                        Soalan juga berubah:
+                    </p>
+                    <p>
+                        <em>"Bagaimana aku mengembangkan simpanan tanpa melanggar prinsip, 
+                        dan tanpa perlu risau setiap kali pasaran bergerak?"</em>
+                    </p>
+                    <p>
+                        Kami melihat pelaburan sebagai satu amalan jangka panjang.<br>
+                        Bukan tentang meneka masa terbaik, tetapi tentang disiplin, kesabaran, dan niat yang jelas.
+                    </p>
+                    <p>
+                        Melalui pelaburan patuh Syariah yang difahami, kekayaan dibina secara perlahan dan 
+                        konsisten — tanpa perlu sentiasa diperhatikan.
+                    </p>
+                    <p>
+                        Hasilnya bukan sekadar angka.<br>
+                        Ia adalah ketenangan untuk fokus kepada hidup, sementara perancangan berjalan di latar belakang.
+                    </p>
+                </section>
+
+                <!-- Divider -->
+                <div class="section-divider"></div>
+
+                <!-- Phase 3: Legacy -->
+                <section class="phase-section">
+                    <h2>Fasa Ketiga: Menyusun Makna</h2>
+                    <p>
+                        Pada satu tahap, kerja tidak lagi menjadi keperluan mutlak.
+                    </p>
+                    <p>
+                        Masa, tenaga, dan ketenangan menjadi lebih berharga.<br>
+                        Dan soalan yang muncul juga lebih mendalam:
+                    </p>
+                    <p>
+                        <em>"Adakah rezeki aku nanti cukup, bersih, dan meninggalkan kesan yang baik?"</em>
+                    </p>
+                    <p>
+                        Perancangan persaraan bukan tentang berhenti bekerja.<br>
+                        Ia tentang memastikan kehidupan selepas itu kekal bermakna.
+                    </p>
+                    <p>
+                        Kami membantu menyusun peralihan ini dengan penuh niat —<br>
+                        bagaimana hasil pelaburan digunakan,<br>
+                        bagaimana aliran pendapatan dikekalkan secara patuh Syariah,<br>
+                        dan bagaimana harta disusun supaya pewarisan memelihara keharmonian keluarga.
+                    </p>
+                    <p>
+                        Apabila semuanya jelas, kebebasan itu terasa.<br>
+                        Bukan kebebasan untuk berbelanja,<br>
+                        tetapi kebebasan untuk memberi tumpuan kepada ibadah, keluarga, dan komuniti.
+                    </p>
+                </section>
+
+                <!-- Divider -->
+                <div class="section-divider"></div>
 
                 <!-- Integration Section -->
-                <section class="integration-section">
-                    <h3>Bersambung, Bukan Berasing</h3>
+                <section class="phase-section">
+                    <h2>Satu Perjalanan, Bukan Bahagian Terpisah</h2>
                     <p>
-                        Ketiga-tiga bab ini adalah satu cerita yang berterusan. 
-                        <strong>Perlindungan</strong> yang kukuh membolehkan anda <strong>melabur</strong> dengan yakin. 
-                        <strong>Pelaburan</strong> yang konsisten membina <strong>kebebasan</strong> untuk masa depan. 
-                        <strong>Kebebasan</strong> yang terancang melengkapkan <strong>warisan</strong> untuk generasi seterusnya.
+                        Ketiga-tiga fasa ini bukan sesuatu yang dibeli berasingan.
                     </p>
                     <p>
-                        Ia bukan tentang memilih satu. Ia tentang memahami bagaimana setiap bahagian 
-                        menyokong yang lain dalam perjalanan kewangan sepanjang hayat anda.
+                        Ia saling menyokong.
+                    </p>
+                    <p>
+                        Perlindungan memberi ruang untuk melabur dengan tenang.<br>
+                        Pelaburan yang konsisten membina masa depan persaraan.<br>
+                        Persaraan yang dirancang dengan niat menyempurnakan amanah yang bermula sejak awal.
+                    </p>
+                    <p>
+                        Semuanya bersambung.
                     </p>
                 </section>
+
+                <!-- Divider -->
+                <div class="section-divider"></div>
 
                 <!-- CTA Section -->
                 <section class="cta-section">
-                    <h3 class="cta-title">Di Mana Anda dalam Perjalanan Ini?</h3>
+                    <h3 class="cta-title">Mulakan dari Fasa Anda</h3>
                     <p>
-                        Setiap keluarga memulakan dari titik berbeza. Ada yang baru mula membina fondasi. 
-                        Ada yang sudah sedia untuk menanam. Ada yang hampir menuaikan hasil.
+                        Tidak perlu merancang semuanya sekaligus.
                     </p>
                     <p>
-                        <strong>Tidak mengira di mana anda berada, mungkin inilah masanya untuk bercakap 
-                        dengan seseorang yang memahami keseluruhan peta perjalanan ini.</strong>
+                        Setiap perjalanan bermula di tempat yang berbeza —<br>
+                        dan biasanya, di fasa yang sedang anda lalui sekarang.
+                    </p>
+                    <p>
+                        Jika anda mahu, kita boleh mulakan dengan satu perbualan ringkas.<br>
+                        Bukan untuk membuat keputusan segera,<br>
+                        hanya untuk memahami di mana anda berada dan apa yang penting untuk keluarga anda.
                     </p>
                     
-                    <a href="https://wa.me/yournumber" class="cta-button">Kongsi di Mana Anda Berada</a>
-                    <p class="cta-note">
-                        Perbualan ringkas untuk saling memahami. Tiada komitmen. Hanya percakapan 
-                        antara dua orang tentang apa yang penting untuk keluarga anda.
-                    </p>
+                    <a href="https://wa.me/yournumber" class="cta-button">WhatsApp Hairul</a>
+                    <p class="cta-note">Perbualan 15 minit. Tiada tekanan.</p>
                 </section>
             </div>
         </div>
