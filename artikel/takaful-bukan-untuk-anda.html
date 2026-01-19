@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takaful Bukan Untuk Anda. Ia Untuk Mereka Yang Anda Tinggalkan. | Hairulanuar Financial</title>
+    <meta name="description" content="Perubahan perspektif tentang perlindungan: dari fokus diri kepada amanah keluarga. Prinsip Takaful sebagai manifestasi cinta dan tanggungjawab.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Swiss Design System - Consistent with main site */
+        :root {
+            --primary: #000000;
+            --secondary: #555555;
+            --accent: #2A5CAA;
+            --light: #F8F8F8;
+            --border: #E0E0E0;
+            --grid-gap: 24px;
+            --max-width: 700px; /* Optimal reading width */
+            --header-height: 80px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { font-size: 18px; scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--primary);
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Typography - Optimized for your poetic style */
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        p {
+            margin-bottom: 1.75rem;
+            max-width: 65ch;
+        }
+        
+        .article-subtitle {
+            font-size: 1.35rem;
+            font-weight: 300;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+        
+        /* Article Meta */
+        .article-meta {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--accent);
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--grid-gap);
+        }
+        
+        /* Simplified Header for Articles */
+        .article-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--grid-gap);
+        }
+        
+        .back-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--primary);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .logo span { font-weight: 300; }
+        
+        /* Main Content */
+        main {
+            margin-top: calc(var(--header-height) + 2rem);
+            padding: 0 0 4rem 0;
+        }
+        
+        /* Article Content Styling */
+        .article-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 3rem auto;
+            position: relative;
+            max-width: 200px;
+        }
+        
+        .section-divider::after {
+            content: "⸻";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 0 1rem;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+        }
+        
+        .emphasis-text {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        blockquote {
+            font-style: italic;
+            color: var(--secondary);
+            padding: 1.5rem 0;
+            margin: 2.5rem 0;
+            border-left: 3px solid var(--accent);
+            padding-left: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Article Navigation */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .nav-button {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-button:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        /* Article CTA */
+        .article-cta {
+            background-color: var(--light);
+            padding: 2.5rem;
+            margin: 4rem 0;
+            text-align: center;
+            border-radius: 0;
+        }
+        
+        /* Footer - Simplified */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .footer-tagline {
+            font-size: 0.9rem;
+            font-weight: 300;
+            max-width: 30ch;
+            margin: 0 auto 2rem;
+        }
+        
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            html { font-size: 17px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; margin-top: 3rem; }
+            .article-subtitle { font-size: 1.15rem; }
+            .container { padding: 0 1.5rem; }
+            main { margin-top: calc(var(--header-height) + 1rem); }
+            .section-divider { margin: 2.5rem auto; }
+            .article-cta { padding: 2rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .article-nav { flex-direction: column; gap: 1.5rem; }
+            .article-meta { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+            .section-divider::after { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="header-container">
+            <a href="../ruang-ilmu.html" class="back-link">← Kembali ke Ruang Ilmu</a>
+            <a href="../index.html" class="logo">HAIRULANUAR<span>FINANCIAL</span></a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <article class="article-content">
+                <!-- Article Header -->
+                <header>
+                    <div class="article-meta">
+                        <span class="article-tag">PERLINDUNGAN KELUARGA</span>
+                        <span>Bacaan selama 5 minit</span>
+                        <span>Prinsip: Ta'awun & Amanah</span>
+                    </div>
+                    
+                    <h1>Takaful Bukan Untuk Anda</h1>
+                    <p class="article-subtitle">Ia Untuk Mereka Yang Anda Tinggalkan</p>
+                </header>
+
+                <!-- Article Body -->
+                <div class="article-body">
+                    <p>
+                        Kebanyakan perbualan kewangan bermula dengan soalan yang sama.
+                    </p>
+                    
+                    <p>
+                        "Pulangan berapa peratus?"<br>
+                        "Perlindungan sampai berapa ringgit?"
+                    </p>
+                    
+                    <p>
+                        Soalan-soalan ini logik.<br>
+                        Tetapi ia bukan soalan yang paling penting.
+                    </p>
+                    
+                    <p>
+                        Takaful Keluarga bertanya sesuatu yang lain. Sesuatu yang lebih sunyi, tetapi lebih berat:
+                    </p>
+                    
+                    <p class="emphasis-text">
+                        "Apakah yang akan mereka peroleh, apabila saya tiada lagi?"
+                    </p>
+                    
+                    <p>
+                        Bukan anda.<br>
+                        Mereka.
+                    </p>
+                    
+                    <p>
+                        Di sinilah pergeseran sebenar berlaku.
+                    </p>
+                    
+                    <p>
+                        Daripada <em>aku</em> kepada <em>amanah</em>.<br>
+                        Daripada yang sementara, kepada yang kekal.
+                    </p>
+                    
+                    <p>
+                        Takaful bukan tentang melindungi hidup anda.<br>
+                        Ia tentang memelihara kehidupan yang bergantung kepada anda.
+                    </p>
+
+                    <!-- Divider -->
+                    <div class="section-divider"></div>
+
+                    <h2>Dari Kontrak, kepada Amanah</h2>
+                    
+                    <p>
+                        Kebanyakan perlindungan kewangan dibina atas pertukaran.
+                    </p>
+                    
+                    <p>
+                        Anda bayar.<br>
+                        Jika sesuatu berlaku, syarikat bayar.
+                    </p>
+                    
+                    <p>
+                        Ia kontrak.<br>
+                        Ia komersial.<br>
+                        Hubungannya jelas — dan berakhir di situ.
+                    </p>
+                    
+                    <p>
+                        Takaful bermula dari tempat yang berbeza.
+                    </p>
+                    
+                    <p>
+                        Ia dibina atas <span class="emphasis-text">Tabarru'</span> (derma) dan <span class="emphasis-text">Ta'awun</span> (tolong-menolong).<br>
+                        Bukan transaksi.<br>
+                        Tetapi penyertaan.
+                    </p>
+                    
+                    <p>
+                        Anda tidak "membeli perlindungan".<br>
+                        Anda <span class="emphasis-text">menyertai satu kumpulan</span> yang bersetuju untuk saling menjaga.
+                    </p>
+                    
+                    <p>
+                        Sumbangan anda menjadi janji bersama:
+                    </p>
+                    
+                    <blockquote>
+                        Jika musibah menimpa salah seorang daripada kita,<br>
+                        kita tidak akan biarkan keluarganya bersendirian.
+                    </blockquote>
+                    
+                    <p>
+                        Di sini, <span class="emphasis-text">niat</span> adalah terasnya.
+                    </p>
+                    
+                    <p>
+                        Niat anda bukan untuk mendapatkan manfaat.<br>
+                        Tetapi untuk menunaikan amanah.
+                    </p>
+                    
+                    <p>
+                        Dan perbezaan ini — walaupun tidak selalu kelihatan di atas kertas —<br>
+                        sangat terasa pada jiwa.
+                    </p>
+
+                    <!-- Divider -->
+                    <div class="section-divider"></div>
+
+                    <h2>Apa Yang Sebenarnya Anda Tinggalkan?</h2>
+                    
+                    <p>
+                        Apabila kita bercakap tentang "meninggalkan", fikiran kita mudah tertumpu kepada angka.
+                    </p>
+                    
+                    <p>
+                        Wang.<br>
+                        Harta.<br>
+                        Hutang.
+                    </p>
+                    
+                    <p>
+                        Tetapi bagi mereka yang tinggal, yang tertinggal selalunya lebih halus — dan lebih berat.
+                    </p>
+
+                    <h3>1. Wang, atau Wang yang Menenangkan?</h3>
+                    <p>
+                        Adakah yang mereka terima hanyalah sejumlah wang?<br>
+                        Atau wang yang datang bersama ketenangan — jelas dari segi prinsip, bersih dari segi niat?
+                    </p>
+                    
+                    <p>
+                        Adakah timbul soalan,<br>
+                        <em>"Halal ke wang ini?"</em><br>
+                        Atau semuanya sudah jelas sejak awal?
+                    </p>
+
+                    <h3>2. Beban, atau Kelegaan?</h3>
+                    <p>
+                        Pada saat paling rapuh dalam hidup mereka,<br>
+                        adakah mereka perlu berdepan dengan borang, kekeliruan, dan ketakutan?
+                    </p>
+                    
+                    <p>
+                        Atau adakah proses itu terasa seperti tangan yang membantu —<br>
+                        kerana anda telah mengaturnya lebih awal, dengan penuh pertimbangan?
+                    </p>
+
+                    <h3>3. Kejutan, atau Kesinambungan?</h3>
+                    <p>
+                        Adakah impian anak-anak terhenti sekelip mata?<br>
+                        Adakah rumah terpaksa dilepaskan?
+                    </p>
+                    
+                    <p>
+                        Atau adakah hidup boleh diteruskan —<br>
+                        memberi mereka ruang untuk berduka, tanpa dihimpit panik kewangan?
+                    </p>
+                    
+                    <p>
+                        Apabila difahami dengan niat yang betul,<br>
+                        <span class="emphasis-text">Takaful menjawab soalan-soalan ini.</span>
+                    </p>
+                    
+                    <p>
+                        Bukan dengan janji kosong.<br>
+                        Tetapi dengan struktur yang berprinsip.
+                    </p>
+
+                    <!-- Divider -->
+                    <div class="section-divider"></div>
+
+                    <h2>Prinsip, Dalam Bentuk Yang Praktikal</h2>
+                    
+                    <p>
+                        Bagaimana semua ini diterjemahkan dalam dunia sebenar?
+                    </p>
+
+                    <h3>Dana Tabarru' yang Telus</h3>
+                    <p>
+                        Sebahagian daripada sumbangan anda membantu keluarga lain — hari ini, bukan nanti.
+                    </p>
+                    
+                    <p>
+                        Ia bukan "kos yang hangus".<br>
+                        Ia sedekah yang berstruktur.<br>
+                        Dan mungkin, pahala yang berterusan.
+                    </p>
+                    
+                    <p>
+                        Anda menjaga keluarga sendiri, sambil menjadi sebahagian daripada kebaikan yang lebih besar.
+                    </p>
+
+                    <h3>Bebas Riba & Gharar</h3>
+                    <p>
+                        Strukturnya menghilangkan unsur yang sering mengganggu ketenangan hati.
+                    </p>
+                    
+                    <p>
+                        Anda tidak berurusan dengan sistem yang kabur.<br>
+                        Anda berurusan dengan mekanisme bantu-membantu yang diurus secara profesional.
+                    </p>
+                    
+                    <p>
+                        Ia terasa lebih lurus.<br>
+                        Lebih selari.
+                    </p>
+
+                    <h3>Proses Tuntutan yang Beretika</h3>
+                    <p>
+                        Keluarga anda tidak berdepan dengan entiti yang mengejar keuntungan semata-mata.
+                    </p>
+                    
+                    <p>
+                        Mereka berurusan dengan sebuah sistem yang — pada asasnya —<br>
+                        dibina untuk membantu.
+                    </p>
+                    
+                    <p>
+                        Dan pada saat paling sukar,<br>
+                        perbezaan ini sangat bermakna.
+                    </p>
+
+                    <!-- Divider -->
+                    <div class="section-divider"></div>
+
+                    <h2>Soalan Untuk Direnung, Bukan Dikira</h2>
+                    
+                    <p>
+                        Sebelum melihat jadual manfaat.<br>
+                        Sebelum membandingkan harga.
+                    </p>
+                    
+                    <p>
+                        Berhenti seketika.<br>
+                        Dan tanya diri anda — mungkin bersama pasangan anda:
+                    </p>
+                    
+                    <blockquote>
+                        • Jika sesuatu berlaku kepada saya, adakah saya tenang dengan cara keluarga saya dilindungi?<br><br>
+                        • Apakah satu perkara paling penting yang saya mahu terus berjalan, walaupun saya tiada?<br><br>
+                        • Adakah perlindungan saya hari ini mencerminkan nilai yang saya pegang — dan ingin wariskan?
+                    </blockquote>
+                    
+                    <p>
+                        Soalan-soalan ini tiada dalam brosur.
+                    </p>
+                    
+                    <p>
+                        Tetapi jawapannya menentukan sama ada perlindungan itu menjadi <span class="emphasis-text">beban</span>,<br>
+                        atau <span class="emphasis-text">berkat</span>.
+                    </p>
+
+                    <!-- Divider -->
+                    <div class="section-divider"></div>
+
+                    <h2>Penutup: Lapisan Terdalam Perlindungan</h2>
+                    
+                    <p>
+                        Pada luarnya, Takaful Keluarga adalah produk kewangan.<br>
+                        Di bawahnya, ia alat pengurusan risiko.
+                    </p>
+                    
+                    <p>
+                        Tetapi di lapisan paling dalam —<br>
+                        ia adalah manifestasi cinta, tanggungjawab, dan amanah.
+                    </p>
+                    
+                    <blockquote>
+                        "Kesejahteraan kamu adalah keutamaan saya —<br>
+                        hari ini, dan pada semua hari esok yang mungkin saya tidak sempat hadiri."
+                    </blockquote>
+                    
+                    <p>
+                        Ia benar-benar bukan untuk anda.
+                    </p>
+                    
+                    <p>
+                        Ia adalah hadiah terancang, berprinsip, dan penuh kasih sayang<br>
+                        untuk mereka yang anda tinggalkan.
+                    </p>
+                </div>
+
+                <!-- Article CTA -->
+                <div class="article-cta">
+                    <h3 style="margin-top: 0; color: var(--primary);">Setelah Membaca Ini, Apa Pula?</h3>
+                    <p>
+                        Jika ada soalan tentang bagaimana prinsip ini diterjemahkan<br>
+                        dalam konteks khusus keluarga anda,<br>
+                        ruang perbualan sentiasa terbuka.
+                    </p>
+                    <p style="margin-top: 1.5rem;">
+                        <a href="https://wa.me/yournumber" style="color: var(--accent); font-weight: 500; text-decoration: none;">
+                            WhatsApp untuk bertanya lebih lanjut →
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Article Navigation -->
+                <footer class="article-footer">
+                    <div class="article-nav">
+                        <div>
+                            <a href="../ruang-ilmu.html" class="nav-button">← Semua Artikel</a>
+                        </div>
+                        <div>
+                            <a href="../artikel/memahami-saringan-syariah.html" class="nav-button">Seterusnya: Memahami Saringan Syariah →</a>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">HAIRULANUAR FINANCIAL</div>
+            <p class="footer-tagline">Perancangan kewangan patuh Syariah untuk ketenangan jangka panjang.</p>
+            
+            <div style="margin: 2rem 0;">
+                <a href="../index.html" style="color: var(--secondary); text-decoration: none; margin: 0 1rem;">Panduan</a>
+                <a href="../perjalanan.html" style="color: var(--secondary); text-decoration: none; margin: 0 1rem;">Perjalanan</a>
+                <a href="../ruang-ilmu.html" style="color: var(--secondary); text-decoration: none; margin: 0 1rem;">Ruang Ilmu</a>
+                <a href="../bercakap.html" style="color: var(--secondary); text-decoration: none; margin: 0 1rem;">Bercakap</a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Estimate reading time
+        const articleText = document.querySelector('.article-body').innerText;
+        const wordCount = articleText.split(/\s+/).length;
+        const readingTime = Math.ceil(wordCount / 200);
+        
+        // Update reading time in meta
+        const readingTimeElements = document.querySelectorAll('.article-meta span');
+        if (readingTimeElements.length > 1) {
+            readingTimeElements[1].textContent = `Bacaan selama ${readingTime} minit`;
+        }
+        
+        // Simple back to top
+        const backToTop = document.createElement('button');
+        backToTop.innerHTML = '↑';
+        backToTop.style.cssText = `
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        
+        document.body.appendChild(backToTop);
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.style.opacity = '1';
+            } else {
+                backToTop.style.opacity = '0';
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Highlight emphasis text on hover
+        document.querySelectorAll('.emphasis-text').forEach(element => {
+            element.style.transition = 'color 0.2s ease';
+            element.addEventListener('mouseenter', () => {
+                element.style.color = 'var(--accent)';
+            });
+            element.addEventListener('mouseleave', () => {
+                element.style.color = 'var(--primary)';
+            });
+        });
+    </script>
+</body>
+</html>
