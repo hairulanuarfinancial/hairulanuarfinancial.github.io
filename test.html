@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjalanan Kewangan Bersepadu | Hairulanuar Financial</title>
+    <meta name="description" content="Tiga fasa perjalanan kewangan untuk keluarga Muslim: Takaful Keluarga, Pelaburan Patuh Syariah, dan Perancangan Persaraan yang bersepadu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Swiss Design System - Consistent with Panduan page */
+        :root {
+            --primary: #000000;
+            --secondary: #555555;
+            --accent: #2A5CAA;
+            --accent-light: #E8F0FA;
+            --light: #F8F8F8;
+            --border: #E0E0E0;
+            --grid-gap: 24px;
+            --max-width: 1200px;
+            --header-height: 80px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { font-size: 16px; scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Typography - Consistent system */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--grid-gap);
+        }
+        
+        /* Header & Navigation - EXACT match to Panduan page */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--grid-gap);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .logo span { font-weight: 300; }
+        
+        nav { display: flex; gap: 2.5rem; }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover { color: var(--primary); }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .nav-cta {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: background-color 0.2s ease;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: var(--header-height);
+            padding: 4rem 0;
+        }
+        
+        .hero { margin-bottom: 5rem; }
+        
+        .content-main { max-width: 800px; margin: 0 auto; }
+        
+        /* Journey Phases Grid */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            margin: 4rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .journey-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
+            }
+        }
+        
+        .phase-card {
+            border-top: 2px solid var(--accent);
+            padding-top: 1.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .phase-number {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .phase-service-tag {
+            display: inline-block;
+            background-color: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .phase-content { flex-grow: 1; }
+        
+        .phase-detail {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--border);
+        }
+        
+        .detail-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section - Consistent with Panduan */
+        .cta-section {
+            background-color: var(--light);
+            padding: 4rem;
+            margin-top: 6rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border-radius: 0;
+            transition: background-color 0.2s ease;
+            margin-top: 1.5rem;
+        }
+        
+        .cta-button:hover { background-color: var(--accent); }
+        
+        .cta-note {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        /* Footer - Exact match to Panduan */
+        footer {
+            padding: 4rem 0 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+        
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .footer-tagline {
+            font-size: 0.9rem;
+            font-weight: 300;
+            max-width: 30ch;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-link:hover { color: var(--primary); }
+        
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        /* Mobile Navigation - Exact match */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-icon {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--primary);
+            position: relative;
+        }
+        
+        .mobile-menu-icon::before,
+        .mobile-menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: var(--primary);
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu-icon::before { top: -6px; }
+        .mobile-menu-icon::after { top: 6px; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
+            .lead { font-size: 1.125rem; }
+            nav {
+                display: none;
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 2rem;
+                border-bottom: 1px solid var(--border);
+                gap: 1.5rem;
+            }
+            nav.open { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .cta-section { padding: 2rem; }
+            main { padding: 3rem 0; }
+        }
+        
+        /* Journey-specific */
+        .journey-intro { max-width: 800px; margin-bottom: 4rem; }
+        .journey-flow {
+            display: none;
+            margin: 3rem 0;
+            position: relative;
+            height: 2px;
+            background-color: var(--border);
+        }
+        
+        @media (min-width: 768px) {
+            .journey-flow { display: block; }
+            .flow-point {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 12px;
+                height: 12px;
+                background-color: var(--accent);
+                border-radius: 50%;
+            }
+            .flow-point:nth-child(1) { left: 16.66%; }
+            .flow-point:nth-child(2) { left: 50%; }
+            .flow-point:nth-child(3) { left: 83.33%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation - Consistent with Panduan -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">HAIRULANUAR<span>FINANCIAL</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="mobile-menu-icon"></span>
+            </button>
+            
+            <nav id="mainNav">
+                <a href="index.html" class="nav-link">Panduan</a>
+                <a href="perjalanan.html" class="nav-link active">Perjalanan</a>
+                <a href="ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
+                <a href="bercakap.html" class="nav-link">Bercakap</a>
+                <a href="https://wa.me/yournumber" class="nav-cta">WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="content-main">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <h1>Tiga Fasa Kehidupan, Satu Perjalanan yang Bersepadu</h1>
+                    <div class="journey-intro">
+                        <p class="lead">
+                            Keperluan kewangan keluarga anda berubah seiring perjalanan hidup. 
+                            Kami tidak menawarkan produk yang terpisah, tetapi <strong>satu kerangka perancangan yang menyeluruh</strong> 
+                            yang berkembang bersama anda melalui tiga fasa utama.
+                        </p>
+                        <p>
+                            Setiap fasa dibina di atas asas yang kukuh. Bukan sekadar perkhidmatan, 
+                            tetapi bab-bab yang saling berkaitan dalam cerita kewangan keluarga anda.
+                        </p>
+                    </div>
+                    
+                    <!-- Journey Flow Visualization (Desktop) -->
+                    <div class="journey-flow">
+                        <div class="flow-point"></div>
+                        <div class="flow-point"></div>
+                        <div class="flow-point"></div>
+                    </div>
+                </section>
+
+                <!-- Three Phase Journey Grid -->
+                <div class="journey-grid">
+                    <!-- Phase 1: Takaful -->
+                    <article class="phase-card">
+                        <div class="phase-number">FASA PERTAMA</div>
+                        <span class="phase-service-tag">TAKAFUL KELUARGA</span>
+                        <h2>Asas yang Kukuh & Perlindungan</h2>
+                        <p class="phase-subtitle"><em>Matlamat: Ketenangan — Keluarga Terlindung Sepenuhnya</em></p>
+                        
+                        <div class="phase-content">
+                            <div class="phase-detail">
+                                <div class="detail-title">Fokus Hidup Anda</div>
+                                <p>Anda sedang membina keluarga. Tanggungjawab semakin bertambah. 
+                                   Fikiran sering tertanya: "Bagaimana jika?"</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Kerisauan Prinsip</div>
+                                <p>"Bagaimana saya melindungi mereka yang saya sayangi, dengan cara 
+                                   yang tidak meragukan dari sudut Syariah? Bukan sekadar polisi, 
+                                   tetapi perlindungan yang saya yakini sepenuhnya."</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Peranan Kami</div>
+                                <p>Kami membina <strong>perisai kewangan berprinsip</strong> melalui Takaful Keluarga. 
+                                   Kami menerangkannya bukan sebagai kos, tetapi sebagai <strong>mekanisme 
+                                   tolong-menolong (ta'awun)</strong> yang praktikal — di mana anda menyertai 
+                                   kumpulan yang saling menjamin, memastikan pendidikan anak-anak dan 
+                                   maruah keluarga kekal terjamin, walau apa pun yang terjadi.</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Hasil Fasa Ini</div>
+                                <p>Anda boleh memberi tumpuan kepada membina hidup dengan <strong>keyakinan penuh</strong>, 
+                                   mengetahui amanah teras anda telah terjaga dengan cara yang halal dan 
+                                   beretika. Ketenangan fikiran yang membolehkan anda tidur lebih nyenyak.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Phase 2: Investments -->
+                    <article class="phase-card">
+                        <div class="phase-number">FASA KEDUA</div>
+                        <span class="phase-service-tag">PELABURAN PATUH SYARIAH</span>
+                        <h2>Pembinaan Kekayaan Berniat</h2>
+                        <p class="phase-subtitle"><em>Matlamat: Pertumbuhan — Kekayaan Berkembang dengan Berkat</em></p>
+                        
+                        <div class="phase-content">
+                            <div class="phase-detail">
+                                <div class="detail-title">Fokus Hidup Anda</div>
+                                <p>Asas perlindungan sudah kukuh. Fikiran mula beralih ke matlamat 
+                                   jangka panjang: pendidikan tinggi anak-anak, memiliki rumah, 
+                                   dana untuk haji/umrah keluarga.</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Kerisauan Prinsip</div>
+                                <p>"Bagaimana saya mengembangkan kekayaan dengan cara yang halal 
+                                   dan terhindar dari riba? Bolehkah saya melabur tanpa terlibat 
+                                   dalam ketidakpastian (gharar) dan spekulasi pasaran?"</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Peranan Kami</div>
+                                <p>Kami menjadi <strong>pemandu anda dalam pelaburan beretika</strong>. Kami membantu 
+                                   anda mengumpulkan dana secara konsisten ke dalam instrumen yang 
+                                   telah disaring prinsipnya. Ini bukan mengenai 'timing the market' 
+                                   tetapi mengenai <strong>disiplin dan niat</strong> — menjadikan pelaburan sebagai 
+                                   amal jariah yang produktif, bukan spekulasi yang gelisahkan.</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Hasil Fasa Ini</div>
+                                <p>Anda menyaksikan kekayaan keluarga berkembang dengan <strong>telus dan tenang</strong>, 
+                                   didorong oleh prinsip dan bukannya ketakutan atau keserakahan. 
+                                   Portfolio yang membina diri sambil anda fokus kepada hidup.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Phase 3: Retirement -->
+                    <article class="phase-card">
+                        <div class="phase-number">FASA KETIGA</div>
+                        <span class="phase-service-tag">PERANCANGAN PERSARAAN</span>
+                        <h2>Memetik Hasil & Kebebasan Bermakna</h2>
+                        <p class="phase-subtitle"><em>Matlamat: Kebebasan — Hidup Bermakna dengan Sumber yang Halal</em></p>
+                        
+                        <div class="phase-content">
+                            <div class="phase-detail">
+                                <div class="detail-title">Fokus Hidup Anda</div>
+                                <p>Mencapai titik di mana kerja adalah pilihan. Ingin memastikan 
+                                   sumber pendapatan kekal halal dan cukup sehingga akhir usia. 
+                                   Mempersiapkan warisan dengan niat yang jelas.</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Kerisauan Prinsip</div>
+                                <p>"Bagaimana saya memastikan rezeki pada usia emas ini kekal suci? 
+                                   Bagaimana kekayaan yang saya bina dapat diwariskan dengan cara 
+                                   yang memelihara keharmonian keluarga dan memenuhi wasiat saya?"</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Peranan Kami</div>
+                                <p>Kami membantu anda <strong>merancang peralihan</strong> dengan penuh niat. Ini melibatkan 
+                                   struktur pengeluaran yang bijak dari pelaburan, memastikan aliran 
+                                   pendapatan patuh Syariah, dan merancang pewarisan (faraid) dengan 
+                                   cara yang menghormati kedua-dua prinsip Islam dan kehendak keluarga.</p>
+                            </div>
+                            
+                            <div class="phase-detail">
+                                <div class="detail-title">Hasil Fasa Ini</div>
+                                <p><strong>Kebebasan sebenar</strong>. Kebebasan untuk memberi tumpuan kepada ibadah, 
+                                   keluarga, dan komuniti — dengan keselamatan kewangan dan ketenangan 
+                                   hati bahawa segala-galanya telah diatur menurut prinsip yang anda 
+                                   yakini sepanjang hayat.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Integration Section -->
+                <section style="margin: 5rem 0;">
+                    <h2>Bersepadu, Bukan Berasing</h2>
+                    <p>
+                        Ketiga-tiga fasa ini bukan produk berasing yang anda beli pada masa berlainan. 
+                        Ia adalah <strong>satu perjalanan berterusan</strong> yang kami pandu.
+                    </p>
+                    
+                    <div style="margin-top: 2rem; padding: 2rem; background-color: var(--light); border-left: 3px solid var(--accent);">
+                        <h3 style="margin-top: 0;">Bagaimana Ia Bersambung:</h3>
+                        <ul style="margin-top: 1rem; padding-left: 1.2rem;">
+                            <li style="margin-bottom: 0.75rem;"><strong>Takaful</strong> melindungi kapasiti anda untuk <strong>melabur</strong> dengan tenang.</li>
+                            <li style="margin-bottom: 0.75rem;"><strong>Pelaburan</strong> yang konsisten membina dana untuk <strong>persaraan</strong> yang bermakna.</li>
+                            <li style="margin-bottom: 0.75rem;"><strong>Persaraan</strong> yang dirancang dengan niat menyempurnakan <strong>warisan</strong> yang bermula dengan perlindungan.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <h3 class="cta-title">Mulakan dari Fasa Anda</h3>
+                    <p>
+                        Anda tidak perlu merancang ketiga-tiga fasa sekaligus. 
+                        Setiap perjalanan bermula dengan satu langkah — pada fasa di mana anda berada sekarang.
+                    </p>
+                    <p>
+                        <strong>Bab manakah yang sedang anda tulis dalam cerita kewangan keluarga anda?</strong>
+                    </p>
+                    
+                    <a href="https://wa.me/yournumber" class="cta-button">Bincangkan Fasa Anda</a>
+                    <p class="cta-note">
+                        Perbualan 15 minit. Tiada tekanan. Hanya untuk memahami di mana anda berada, 
+                        dan jika cara kami boleh membantu perjalanan seterusnya.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer - Consistent with Panduan -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="footer-logo">HAIRULANUAR FINANCIAL</div>
+                    <p class="footer-tagline">Tiga fasa kehidupan, satu perjalanan kewangan yang bersepadu.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Panduan</a>
+                    <a href="perjalanan.html" class="footer-link">Perjalanan</a>
+                    <a href="ruang-ilmu.html" class="footer-link">Ruang Ilmu</a>
+                    <a href="bercakap.html" class="footer-link">Bercakap</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <a href="https://wa.me/yournumber" class="footer-link">WhatsApp: +60 XX XXXX XXXX</a>
+                    <a href="mailto:hello@hairulanuarfinancial.com" class="footer-link">Email: hello@hairulanuarfinancial.com</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality - Consistent with Panduan
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('open');
+            
+            const icon = this.querySelector('.mobile-menu-icon');
+            if (nav.classList.contains('open')) {
+                icon.style.transform = 'rotate(45deg)';
+                icon.style.backgroundColor = 'var(--accent)';
+            } else {
+                icon.style.transform = 'rotate(0)';
+                icon.style.backgroundColor = 'var(--primary)';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const nav = document.getElementById('mainNav');
+                if (nav.classList.contains('open')) {
+                    nav.classList.remove('open');
+                    const icon = document.querySelector('.mobile-menu-icon');
+                    icon.style.transform = 'rotate(0)';
+                    icon.style.backgroundColor = 'var(--primary)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
