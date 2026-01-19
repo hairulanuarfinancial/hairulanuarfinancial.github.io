@@ -1,126 +1,656 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <title>Hairulanuar Financial | Perancangan Kewangan Patuh Syariah</title>
-  <meta name="description" content="Perancang kewangan patuh Syariah yang fokus kepada perlindungan keluarga, ketahanan kewangan dan impak jangka panjang masyarakat.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="assets/css/style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Perancangan Kewangan Patuh Syariah | Hairulanuar Financial</title>
+    <meta name="description" content="Panduan perancangan kewangan patuh Syariah untuk keluarga Muslim. Kami membimbing anda melalui Takaful, pelaburan Islamik, dan persaraan dengan prinsip dan ketenangan jangka panjang.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Swiss Design Principles: Minimalism, Grid-based, Typographic Focus */
+        :root {
+            --primary: #000000;
+            --secondary: #555555;
+            --accent: #2A5CAA;
+            --light: #F8F8F8;
+            --border: #E0E0E0;
+            --grid-gap: 24px;
+            --max-width: 1200px;
+            --header-height: 80px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Typography - Swiss precision */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 4rem 0;
+            position: relative;
+        }
+        
+        .section-divider::after {
+            content: "⸻";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 0 1rem;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            letter-spacing: 0.5em;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--grid-gap);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--grid-gap);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            font-weight: 300;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .nav-cta {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: background-color 0.2s ease;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: var(--header-height);
+            padding: 4rem 0;
+        }
+        
+        .hero {
+            margin-bottom: 5rem;
+        }
+        
+        .content-main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4rem;
+            }
+        }
+        
+        .principle-card {
+            border-top: 2px solid var(--accent);
+            padding-top: 1.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--light);
+            padding: 4rem;
+            margin-top: 6rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border-radius: 0;
+            transition: background-color 0.2s ease;
+            margin-top: 1.5rem;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--accent);
+        }
+        
+        .cta-note {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 4rem 0 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+        
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .footer-tagline {
+            font-size: 0.9rem;
+            font-weight: 300;
+            max-width: 30ch;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-icon {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--primary);
+            position: relative;
+        }
+        
+        .mobile-menu-icon::before,
+        .mobile-menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: var(--primary);
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu-icon::before {
+            top: -6px;
+        }
+        
+        .mobile-menu-icon::after {
+            top: 6px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 3rem;
+            }
+            
+            .lead {
+                font-size: 1.125rem;
+            }
+            
+            nav {
+                display: none;
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 2rem;
+                border-bottom: 1px solid var(--border);
+                gap: 1.5rem;
+            }
+            
+            nav.open {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .cta-section {
+                padding: 2rem;
+            }
+            
+            main {
+                padding: 3rem 0;
+            }
+            
+            .section-divider::after {
+                font-size: 1rem;
+                letter-spacing: 0.3em;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">HAIRULANUAR<span>FINANCIAL</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="mobile-menu-icon"></span>
+            </button>
+            
+            <nav id="mainNav">
+                <a href="index.html" class="nav-link active">Panduan</a>
+                <a href="perjalanan.html" class="nav-link">Perjalanan</a>
+                <a href="ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
+                <a href="bercakap.html" class="nav-link">Bercakap</a>
+                <a href="https://wa.me/yournumber" class="nav-cta">WhatsApp</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="container">
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="content-main">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <h1>Panduan, bukan jualan.</h1>
+                    <p class="lead">
+                        Perancangan kewangan yang baik bermula dengan cara berfikir yang betul.
+                    </p>
+                    
+                    <p>
+                        Halaman ini bukan tentang produk.<br>
+                        Ia tentang pegangan.
+                    </p>
+                    
+                    <p>
+                        Inilah cara kami melihat kewangan, amanah, dan tanggungjawab terhadap keluarga — dan bagaimana cara berfikir ini membentuk setiap perbualan yang kami jalani.
+                    </p>
+                </section>
 
-<nav>
-  <a href="index.html">Laman Utama</a>
-  <a href="about.html">Tentang Kami</a>
-  <a href="services.html">Perkhidmatan</a>
-  <a href="education.html">Ilmu Kewangan</a>
-  <a href="disclaimer.html">Penafian</a>
-</nav>
+                <!-- Divider -->
+                <div class="section-divider"></div>
 
-<hr>
+                <!-- Principles Grid -->
+                <div class="principles-grid">
+                    <!-- Principle 1 -->
+                    <article class="principle-card">
+                        <h3>Niat sebagai teras</h3>
+                        <p>
+                            Perbualan tentang kewangan bukan sekadar tentang angka.
+                        </p>
+                        <p>
+                            Ia tentang amanah.<br>
+                            Tentang menjaga keluarga dengan cara yang diyakini.<br>
+                            Tentang membuat keputusan tanpa rasa ragu.
+                        </p>
+                        <p>
+                            Setiap panduan yang kami berikan diniatkan sebagai khidmat — supaya urusan kewangan tidak bercanggah dengan nilai hidup yang dipegang, dan ketenangan boleh dicapai tanpa kompromi.
+                        </p>
+                    </article>
 
-<!-- HERO -->
-<h1>Perancangan Kewangan Patuh Syariah</h1>
+                    <!-- Principle 2 -->
+                    <article class="principle-card">
+                        <h3>Generasi, bukan suku tahun</h3>
+                        <p>
+                            Kami tidak merancang untuk keputusan segera.
+                        </p>
+                        <p>
+                            Kami merancang untuk fasa hidup.
+                        </p>
+                        <p>
+                            Dalam dunia kewangan yang bising dan tergesa-gesa, kami memilih untuk berfikir lebih jauh — sepuluh, dua puluh, tiga puluh tahun ke hadapan.
+                        </p>
+                        <p>
+                            Kerana ketenangan sebenar tidak datang daripada reaksi pantas,<br>
+                            tetapi daripada pelan yang kekal relevan walaupun hidup berubah.
+                        </p>
+                    </article>
 
-<p>
-Pendekatan berstruktur untuk individu dan keluarga yang menghargai
-kejelasan, tanggungjawab dan ketenangan jangka panjang.
-</p>
+                    <!-- Principle 3 -->
+                    <article class="principle-card">
+                        <h3>Mendidik sebelum mencadang</h3>
+                        <p>
+                            Peranan kami bukan untuk memujuk.
+                        </p>
+                        <p>
+                            Ia untuk membantu anda memahami.
+                        </p>
+                        <p>
+                            Laman ini, perbualan yang kita jalani, dan bahan yang kami kongsikan wujud supaya anda boleh membuat keputusan dengan yakin — walaupun akhirnya anda memilih untuk tidak meneruskannya bersama kami.
+                        </p>
+                        <p>
+                            Kepercayaan yang lahir daripada kefahaman itulah asas kepada hubungan jangka panjang.
+                        </p>
+                    </article>
 
-<p>
-Hairulanuar Financial merupakan perancang kewangan patuh Syariah
-yang membantu individu dan keluarga membina perlindungan,
-ketahanan kewangan dan perancangan jangka panjang secara
-beretika dan berstruktur.
-</p>
+                    <!-- Principle 4 -->
+                    <article class="principle-card">
+                        <h3>Ketenangan sebagai isyarat</h3>
+                        <p>
+                            Bergerak dengan tenang, bukan terburu-buru
+                        </p>
+                        <p>
+                            Cara seseorang bekerja memberi isyarat tentang apa yang mereka utamakan.
+                        </p>
+                        <p>
+                            Kami tidak mengejar sensasi pasaran atau mencipta rasa takut untuk mendorong tindakan.<br>
+                            Kami tidak menghantar peringatan mendesak atau janji yang terlalu indah.
+                        </p>
+                        <p>
+                            Sebaliknya, kami memilih untuk mendengar, memperlahankan proses, dan memberi ruang berfikir.
+                        </p>
+                        <p>
+                            Kerana keputusan yang dibuat dengan tenang biasanya lebih setia kepada tujuan asalnya.
+                        </p>
+                    </article>
 
-<hr>
+                    <!-- Principle 5 -->
+                    <article class="principle-card">
+                        <h3>Kewangan yang sengaja membosankan</h3>
+                        <p>
+                            Kewangan yang baik tidak sepatutnya mengganggu hidup anda setiap hari.
+                        </p>
+                        <p>
+                            Ia sepatutnya kukuh, beretika, dan boleh dijangka.
+                        </p>
+                        <p>
+                            Keseronokan sebenar bukan pada turun naik angka,<br>
+                            tetapi pada kehidupan yang angka itu sokong —<br>
+                            pendidikan anak, rumah yang tenang, ibadah yang tidak dibebani kebimbangan.
+                        </p>
+                        <p>
+                            Pelan yang baik ialah pelan yang membolehkan anda fokus kepada hidup,<br>
+                            bukan memerhatikannya sepanjang masa.
+                        </p>
+                    </article>
+                </div>
 
-<h2>Nota Awal Tahun</h2>
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <h3 class="cta-title">Jika ini terasa selari</h3>
+                    <p>
+                        Jika cara berfikir ini terasa dekat dengan anda,<br>
+                        mungkin wajar kita berbual.
+                    </p>
+                    <p>
+                        Bukan untuk membuat keputusan segera.<br>
+                        Bukan untuk menandatangani apa-apa.
+                    </p>
+                    <p>
+                        Hanya satu perbualan ringkas untuk saling memahami —<br>
+                        tentang di mana anda berada sekarang, dan apa yang penting untuk keluarga anda.
+                    </p>
+                    
+                    <a href="https://wa.me/yournumber" class="cta-button">WhatsApp Hairul</a>
+                    <p class="cta-note">(Apabila anda bersedia.)</p>
+                </section>
+            </div>
+        </div>
+    </main>
 
-<p>
-Memasuki tahun 2026, fokus kami kekal pada perancangan kewangan
-patuh Syariah yang berstruktur, beretika dan berpandukan keperluan
-sebenar individu dan keluarga.
-</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="footer-logo">HAIRULANUAR FINANCIAL</div>
+                    <p class="footer-tagline">Perancangan kewangan patuh Syariah untuk ketenangan jangka panjang.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Panduan</a>
+                    <a href="perjalanan.html" class="footer-link">Perjalanan</a>
+                    <a href="ruang-ilmu.html" class="footer-link">Ruang Ilmu</a>
+                    <a href="bercakap.html" class="footer-link">Bercakap</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <a href="https://wa.me/yournumber" class="footer-link">WhatsApp: +60 XX XXXX XXXX</a>
+                    <a href="mailto:hello@hairulanuarfinancial.com" class="footer-link">Email: hello@hairulanuarfinancial.com</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.
+            </div>
+        </div>
+    </footer>
 
-<p>
-Laman ini akan dikemas kini secara berperingkat dengan bahan
-pendidikan dan penerangan perkhidmatan untuk membantu anda
-membuat keputusan kewangan dengan lebih jelas dan tenang.
-</p>
-
-<!-- MISSION -->
-<h2>Misi Kami</h2>
-<ul>
-  <li>Melindungi keluarga melalui perancangan beretika</li>
-  <li>Membina ketahanan kewangan jangka panjang</li>
-  <li>Mewujudkan impak positif kepada masyarakat</li>
-</ul>
-
-<!-- SERVICES OVERVIEW -->
-<h2>Perkhidmatan</h2>
-
-<p>
-Perkhidmatan perancangan kewangan patuh Syariah yang ditawarkan
-berfokus kepada keperluan sebenar klien, pendidikan kewangan
-dan hubungan jangka panjang.
-</p>
-
-<section>  
-<ul>
-  <li>
-    <a href="services/risiko-takaful.html">
-      Perancangan Risiko & Takaful
-    </a>
-  </li>
-  <li>
-    <a href="services/pelaburan-patuh-syariah.html">
-      Pelaburan Patuh Syariah
-    </a>
-  </li>
-  <li>
-    <a href="services/perancangan-persaraan.html">
-      Perancangan Persaraan
-    </a>
-  </li>
-</ul>
-</section>
-
-<hr>
-
-<h2>Bagaimana Kami Bekerja</h2>
-
-<p>
-Pendekatan kami bermula dengan memahami situasi dan keperluan
-kewangan individu, diikuti dengan pendidikan yang jelas sebelum
-sebarang perancangan disusun.
-</p>
-
-<p>
-Perancangan kewangan yang baik bukan sekadar produk, tetapi satu
-proses berterusan yang selaras dengan nilai, matlamat dan fasa
-kehidupan.
-</p>
-
-<p>
-Gambaran umum mengenai pendekatan ini boleh dibaca di halaman
-<a href="proses-perancangan.html">Apa Yang Boleh Dijangkakan</a>.
-</p>
-  
-<footer>
-  <p>
-    &copy; 2025–2026 Hairulanuar Financial |
-    Perancangan Kewangan Patuh Syariah |
-    <a href="disclaimer.html">Penafian</a>
-  </p>
-</footer>
-
-</div>
-
+    <script>
+        // Mobile menu functionality
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('open');
+            
+            // Animate hamburger to X
+            const icon = this.querySelector('.mobile-menu-icon');
+            if (nav.classList.contains('open')) {
+                icon.style.transform = 'rotate(45deg)';
+                icon.style.backgroundColor = 'var(--accent)';
+                icon.style.height = '2px';
+                
+                icon.style.before = icon.style.before || {};
+                icon.style.before.transform = 'rotate(90deg)';
+                icon.style.before.top = '0';
+                
+                icon.style.after = icon.style.after || {};
+                icon.style.after.transform = 'rotate(0deg)';
+                icon.style.after.opacity = '0';
+            } else {
+                icon.style.transform = 'rotate(0)';
+                icon.style.backgroundColor = 'var(--primary)';
+                
+                icon.style.before = icon.style.before || {};
+                icon.style.before.transform = 'rotate(0)';
+                icon.style.before.top = '-6px';
+                
+                icon.style.after = icon.style.after || {};
+                icon.style.after.transform = 'rotate(0)';
+                icon.style.after.opacity = '1';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const nav = document.getElementById('mainNav');
+                if (nav.classList.contains('open')) {
+                    nav.classList.remove('open');
+                    
+                    // Reset hamburger icon
+                    const icon = document.querySelector('.mobile-menu-icon');
+                    icon.style.transform = 'rotate(0)';
+                    icon.style.backgroundColor = 'var(--primary)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
