@@ -166,23 +166,30 @@ footer {
 /* ===== Mobile Navigation (Always Visible) ===== */
 
 @media (max-width: 768px) {
+  .header-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
   nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px 20px;
-    margin-top: 16px;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
   }
 
-  /* First three links stay naturally on row one */
-
-  /* Force action links onto the same second row */
-  .nav-link:nth-of-type(4),
-  .nav-cta {
-    flex: 0 0 auto;
+  nav a {
+    margin-right: 0;
+    font-size: 14px;
+    letter-spacing: 0.02em;
   }
 
   .nav-cta {
-    margin-left: 0;
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 8px;
   }
 }
