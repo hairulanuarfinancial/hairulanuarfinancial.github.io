@@ -176,9 +176,8 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin-top: 8px;
+    gap: 12px 20px;
+    margin-top: 16px;
   }
 
   nav a {
@@ -187,9 +186,12 @@ footer {
     letter-spacing: 0.02em;
   }
 
+  .nav-link:nth-of-type(4),
   .nav-cta {
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: 8px;
+    flex: 0 0 auto;
+  }
+
+ .nav-cta {
+    margin-left: 0;
   }
 }
