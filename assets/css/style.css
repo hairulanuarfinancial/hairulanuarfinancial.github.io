@@ -163,7 +163,7 @@ footer {
   justify-content: space-between;
 }
 
-/* Mobile header layout */
+/* ===== Mobile Navigation (Always Visible) ===== */
 @media (max-width: 768px) {
   .header-bar {
     flex-direction: column;
@@ -171,6 +171,7 @@ footer {
     gap: 12px;
   }
 
+  /* Wrap each row in its own nav group */
   nav.nav-main,
   nav.nav-actions {
     display: flex;
