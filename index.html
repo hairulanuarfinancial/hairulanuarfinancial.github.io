@@ -27,6 +27,8 @@
         HAIRULANUAR<span>FINANCIAL</span>
       </a>
 
+      <button class="nav-toggle" aria-label="Buka menu">☰</button>
+
       <nav>
   <a href="index.html" class="nav-link active">Panduan</a>
   <a href="perjalanan.html" class="nav-link">Perjalanan</a>
@@ -192,5 +194,14 @@
   </div>
 </footer>
 
+  <script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
+  
 </body>
 </html>
