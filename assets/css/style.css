@@ -162,3 +162,34 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
+
+/* ===== Mobile Navigation (Always Visible) ===== */
+
+@media (max-width: 768px) {
+  .header-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  nav a {
+    margin-right: 0;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-cta {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+}
