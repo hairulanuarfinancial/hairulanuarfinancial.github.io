@@ -1,11 +1,6 @@
-:root {
-  --accent-color: #1f3d2b; /* deep muted green */
-}
-
 /* ===== 1. SWISS BASE & TYPOGRAPHY ===== */
 
 body {
-  /* Added 'Inter' at the front of the stack */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -15,10 +10,10 @@ body {
 }
 
 h1 {
-  font-size: clamp(48px, 8vw, 80px); 
-  font-weight: 900; 
-  line-height: 0.95; 
-  letter-spacing: -0.04em; 
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
   margin-top: 60px;
   margin-bottom: 30px;
   color: #111111;
@@ -41,7 +36,7 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* ===== 2. THE SWISS GRID (The engine of the site) ===== */
+/* ===== 2. THE SWISS GRID ===== */
 
 .container {
   max-width: 1200px;
@@ -49,23 +44,42 @@ h2 {
   padding: 0 24px;
 }
 
-/* This was missing/broken in your audit! */
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
 }
 
-/* Asymmetrical Placement */
-.col-main {
-  grid-column: 2 / span 8; /* Anchored left with space on right */
+/* Sections use nested 12‑col grid for internal placement */
+section {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
 }
 
+/* Remove top border from hero section */
 .hero {
-  grid-column: 2 / span 9;
-  padding-top: 80px;
-  padding-bottom: 100px;
+  border-top: none;
 }
+
+/* ===== 3. HERO PLACEMENT ===== */
+
+.hero h1 {
+  grid-column: 2 / span 10;   /* wide headline */
+  margin-bottom: 40px;
+}
+
+.hero-content {
+  grid-column: 2 / span 6;    /* readable text block */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 4. PRINCIPLES GRID ===== */
 
 .principles-grid {
   grid-column: 2 / -1;
@@ -74,24 +88,51 @@ h2 {
   gap: 60px 40px;
 }
 
-/* ===== 3. SECTIONING & LINES ===== */
-
-section {
-  border-top: 1px solid #e5e5e5;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  grid-column: 1 / -1; /* Sections take full width to show the line */
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
+.principle-card h3 {
+  border-top: 2px solid #111;
+  padding-top: 12px;
+  margin-top: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Remove line from top hero */
-main > .container > .grid > .hero {
-  border-top: none;
+.principle-card p {
+  font-size: 15px;
+  color: #444;
 }
 
-/* ===== 4. NAVIGATION ===== */
+/* Optional hover effect */
+.principle-card:hover {
+  background-color: #f9f9f9;
+  transition: background 0.2s ease;
+}
+
+/* ===== 5. GUIDANCE SECTION (3‑COLUMN ASYMMETRY) ===== */
+
+.guidance-section h2 {
+  grid-column: 2 / span 4;    /* title on left */
+}
+
+.guidance-content {
+  grid-column: 6 / span 3;    /* explanation in middle */
+}
+
+.guidance-links {
+  grid-column: 9 / span 4;    /* links on right */
+}
+
+.guidance-links ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.guidance-links li {
+  margin-bottom: 0.75rem;
+}
+
+/* ===== 6. NAVIGATION ===== */
 
 .header-bar {
   display: flex;
@@ -115,19 +156,92 @@ nav a {
   letter-spacing: 0.05em;
 }
 
-/* ===== 5. MOBILE RESPONSIVENESS ===== */
+/* Active page indicator */
+.nav-link.active {
+  border-bottom: 2px solid #111;
+  padding-bottom: 4px;
+}
+
+/* ===== 7. FOCUS STYLES (ACCESSIBILITY) ===== */
+
+a:focus, button:focus {
+  outline: 2px solid #1f3d2b;
+  outline-offset: 2px;
+}
+
+/* Remove default outline for mouse users, keep for keyboard */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===== 8. CTA & FOOTER ===== */
+
+.cta-wrapper {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0; /* swiss square */
+  margin-top: 16px;
+}
+
+.cta-button:hover {
+  background: #333;
+}
+
+.cta-note {
+  color: #666;
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.footer-note {
+  border-top: 1px solid #e5e5e5;
+  padding: 40px 0;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+/* ===== 9. MOBILE RESPONSIVENESS ===== */
 
 @media (max-width: 768px) {
-  .grid, section {
-    grid-template-columns: 1fr;
+  /* Switch to block layout for simplicity */
+  .grid,
+  section {
+    display: block;
   }
 
-  .col-main, .hero, .principles-grid {
-    grid-column: 1 / -1;
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero h1,
+  .hero-content,
+  .guidance-section h2,
+  .guidance-content,
+  .guidance-links {
+    grid-column: auto; /* reset */
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .principles-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .header-bar {
@@ -135,62 +249,17 @@ nav a {
     align-items: flex-start;
     gap: 20px;
   }
-}
 
-.principle-card h3 {
-  border-top: 2px solid #111; /* A thicker line for internal titles */
-  padding-top: 12px;
-  margin-top: 0;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
+  nav {
+    flex-wrap: wrap;
+  }
 
-.principle-card p {
-  font-size: 15px;
-  color: #444;
-}
+  section {
+    padding: 60px 0;
+  }
 
-/* This ensures the paragraphs don't spread out horizontally */
-.hero-content {
-  grid-column: 1 / span 6; /* Occupies 6 columns of the internal section grid */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Adjust the H1 to span more columns if needed */
-.hero h1 {
-  grid-column: 1 / -1; /* Spans across the top of the section */
-  margin-bottom: 40px;
-}
-
-/* Hero placement */
-.hero h1 {
-  grid-column: 2 / span 10; /* Headline spans wide */
-}
-
-.hero-content {
-  grid-column: 2 / span 6; /* Text stays in a readable 6-column block */
-}
-
-/* "Bagaimana" Section placement */
-section h2 {
-  grid-column: 2 / span 4; /* Title on the left */
-}
-
-.guidance-content {
-  grid-column: 6 / span 3; /* Explanation in the middle */
-}
-
-.guidance-links {
-  grid-column: 9 / span 4; /* Links on the right */
-}
-
-/* Mobile Fix: Stack them back up on small screens */
-@media (max-width: 768px) {
-  .hero-content, 
-  .guidance-content, 
-  .guidance-links {
-    grid-column: 1 / -1;
+  .hero h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 }
