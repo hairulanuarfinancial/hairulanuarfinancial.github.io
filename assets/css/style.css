@@ -203,3 +203,33 @@ footer {
     margin-right: 0;
   }
 }
+
+/* High-Impact Swiss Typography */
+
+h1 {
+  /* This makes the font size 80px on desktop and 48px on mobile automatically */
+  font-size: clamp(48px, 8vw, 80px); 
+  
+  /* 900 weight is the 'Swiss' secret for headlines */
+  font-weight: 900; 
+  
+  /* Tighten the line height so the words feel like a single unit */
+  line-height: 0.95; 
+  
+  /* Negative letter spacing is a hallmark of Swiss design */
+  letter-spacing: -0.04em; 
+  
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color: #111111;
+  text-transform: none; /* Keep it natural, but bold */
+}
+
+.lead {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  color: #666666; /* Muted gray to let the H1 pop */
+  max-width: 600px; /* Prevents lines from being too long to read */
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
