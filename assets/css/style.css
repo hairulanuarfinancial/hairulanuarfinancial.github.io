@@ -2,11 +2,11 @@
   --accent-color: #1f3d2b; /* deep muted green */
 }
 
-/* ===== Swiss Style Base ===== */
+/* ===== 1. SWISS BASE & TYPOGRAPHY ===== */
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-               Helvetica, Arial, sans-serif;
+  /* Added 'Inter' at the front of the stack */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
@@ -14,7 +14,34 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Layout Container ===== */
+h1 {
+  font-size: clamp(48px, 8vw, 80px); 
+  font-weight: 900; 
+  line-height: 0.95; 
+  letter-spacing: -0.04em; 
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color: #111111;
+}
+
+h2 {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.lead {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  color: #666666;
+  max-width: 600px;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+/* ===== 2. THE SWISS GRID (The engine of the site) ===== */
 
 .container {
   max-width: 1200px;
@@ -22,238 +49,90 @@ body {
   padding: 0 24px;
 }
 
-/* ===== Swiss 12-Column Grid ===== */
-
-/* Principles Grid - Making it asymmetrical too */
-.principles-grid {
-  grid-column: 2 / -1; /* Starts at col 2, goes to the very end */
+/* This was missing/broken in your audit! */
+.grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns of cards */
-  gap: 60px 40px;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
 }
 
-/* Update the Main Column to be Asymmetrical */
+/* Asymmetrical Placement */
 .col-main {
-  /* Starts at column 2, spans 7 columns */
-  grid-column: 2 / span 7; 
+  grid-column: 2 / span 8; /* Anchored left with space on right */
 }
 
-/* For the Hero specifically, we want it even tighter to the left */
 .hero {
-  grid-column: 2 / span 8;
-  padding-top: 100px;
+  grid-column: 2 / span 9;
+  padding-top: 80px;
   padding-bottom: 100px;
 }
 
-.col-full {
-  grid-column: 1 / -1;
+.principles-grid {
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 40px;
 }
 
-.col-aside {
-  grid-column: 9 / span 4;
+/* ===== 3. SECTIONING & LINES ===== */
+
+section {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  grid-column: 1 / -1; /* Sections take full width to show the line */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
 }
 
-/* Mobile collapse */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 16px;
-  }
-
-  .col-main,
-  .col-full,
-  .col-aside {
-    grid-column: 1 / -1;
-  }
+/* Remove line from top hero */
+main > .container > .grid > .hero {
+  border-top: none;
 }
 
-/* ===== Navigation Links (Desktop) ===== */
+/* ===== 4. NAVIGATION ===== */
+
+.header-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 40px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
 nav {
   display: flex;
-  gap: 20px;
-  justify-content: flex-end; /* all links to the right on desktop */
+  gap: 24px;
 }
 
 nav a {
   text-decoration: none;
   color: #111;
   font-size: 14px;
-  letter-spacing: 0.5px;
-}
-
-nav a:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
-
-
-/* ===== Headings ===== */
-
-h1 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 22px;
   font-weight: 600;
-  margin-top: 40px;
-  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* ===== Typography Rhythm ===== */
+/* ===== 5. MOBILE RESPONSIVENESS ===== */
 
-p {
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-h2 + p {
-  margin-top: 12px;
-}
-
-/* ===== Lists ===== */
-
-ul,
-ol {
-  padding-left: 20px;
-  margin-top: 16px;
-  margin-bottom: 24px;
-}
-
-li {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-/* ===== Links ===== */
-
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-}
-
-/* ===== Section Spacing ===== */
-
-section + section {
-  margin-top: 72px;
-}
-
-/* ===== Horizontal Rule ===== */
-
-hr {
-  border: none;
-  border-top: 1px solid #e5e5e5;
-  margin: 30px 0;
-}
-
-/* ===== Footer ===== */
-
-footer {
-  margin-top: 80px;
-  padding-top: 24px;
-  border-top: 1px solid #e5e5e5;
-}
-
-.footer-note {
-  font-size: 13px;
-  color: #666666;
-  text-align: center;
-}
-
-/* ===== Header Bar (Desktop) ===== */
-.header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Logo left, nav right */
-  flex-wrap: wrap; /* allow wrap on very small screens if needed */
-}
-
-/* ===== Mobile Navigation ===== */
 @media (max-width: 768px) {
+  .grid, section {
+    grid-template-columns: 1fr;
+  }
+
+  .col-main, .hero, .principles-grid {
+    grid-column: 1 / -1;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
   .header-bar {
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    align-items: flex-start;
+    gap: 20px;
   }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;          /* allow multiple rows */
-    justify-content: center;   /* center links */
-    gap: 12px 20px;           /* row gap 12px, col gap 20px */
-    margin-top: 16px;
-  }
-
-  /* Row 1: First three content pages */
-  nav a:nth-child(1),
-  nav a:nth-child(2),
-  nav a:nth-child(3) {
-    order: 1;
-    flex: 0 0 auto;           /* do not stretch */
-  }
-
-  /* Row 2: Bercakap + WhatsApp */
-  nav a:nth-child(4),
-  nav a:nth-child(5) {
-    order: 2;
-    flex: 0 0 auto;
-  }
-
-  /* Remove any auto margins */
-  nav a {
-    margin-right: 0;
-  }
-}
-
-/* High-Impact Swiss Typography */
-
-h1 {
-  /* This makes the font size 80px on desktop and 48px on mobile automatically */
-  font-size: clamp(48px, 8vw, 80px); 
-  
-  /* 900 weight is the 'Swiss' secret for headlines */
-  font-weight: 900; 
-  
-  /* Tighten the line height so the words feel like a single unit */
-  line-height: 0.95; 
-  
-  /* Negative letter spacing is a hallmark of Swiss design */
-  letter-spacing: -0.04em; 
-  
-  margin-top: 60px;
-  margin-bottom: 30px;
-  color: #111111;
-  text-transform: none; /* Keep it natural, but bold */
-}
-
-.lead {
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 400;
-  color: #666666; /* Muted gray to let the H1 pop */
-  max-width: 600px; /* Prevents lines from being too long to read */
-  line-height: 1.4;
-  margin-bottom: 40px;
-}
-
-/* Thin structural lines between sections */
-section {
-  border-top: 1px solid #e5e5e5;
-  padding-top: 60px;
-  padding-bottom: 80px;
-}
-
-/* Remove border from the very first section (Hero) */
-header + main .hero {
-  border-top: none;
-  padding-top: 40px;
 }
