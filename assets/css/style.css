@@ -24,14 +24,25 @@ body {
 
 /* ===== Swiss 12-Column Grid ===== */
 
-.grid {
+/* Principles Grid - Making it asymmetrical too */
+.principles-grid {
+  grid-column: 2 / -1; /* Starts at col 2, goes to the very end */
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
+  grid-template-columns: repeat(2, 1fr); /* Two columns of cards */
+  gap: 60px 40px;
 }
 
+/* Update the Main Column to be Asymmetrical */
 .col-main {
-  grid-column: 4 / span 6;
+  /* Starts at column 2, spans 7 columns */
+  grid-column: 2 / span 7; 
+}
+
+/* For the Hero specifically, we want it even tighter to the left */
+.hero {
+  grid-column: 2 / span 8;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .col-full {
@@ -232,4 +243,17 @@ h1 {
   max-width: 600px; /* Prevents lines from being too long to read */
   line-height: 1.4;
   margin-bottom: 40px;
+}
+
+/* Thin structural lines between sections */
+section {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+/* Remove border from the very first section (Hero) */
+header + main .hero {
+  border-top: none;
+  padding-top: 40px;
 }
