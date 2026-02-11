@@ -3,153 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Panduan Perancangan Kewangan Patuh Syariah | Hairulanuar Financial</title>
+    <title>Panduan Perancangan Kewangan Patuh Syariah · Hairulanuar Financial</title>
     <meta name="description" content="Panduan perancangan kewangan patuh Syariah untuk keluarga Muslim — berteraskan niat, kefahaman, dan ketenangan jangka panjang.">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
-    <!-- CSS: relative path for portability -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FinancialService",
-      "name": "Hairulanuar Financial",
-      "description": "Falsafah dan prinsip perancangan kewangan patuh Syariah oleh Hairul Anuar.",
-      "telephone": "+601127657730",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "MY"
-      }
-    }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS integrated here for demo — you can move to external file */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1e1e1e;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        /* header */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 0;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: #1e1e1e;
+        }
+        .logo span { font-weight: 400; color: #8a8a8a; }
+        nav { display: flex; gap: 32px; }
+        nav a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #c6a43f; }
+        .nav-link.active { color: #1e1e1e; font-weight: 600; border-bottom: 2px solid #c6a43f; padding-bottom: 4px; }
+        .nav-cta {
+            background: #c6a43f;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: #b38f32; color: white; }
+        /* hero */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: clamp(44px, 8vw, 72px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #1e1e1e;
+        }
+        .lead {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #6b6b6b;
+            margin-bottom: 32px;
+        }
+        .hero p {
+            font-size: 1.125rem;
+            color: #3e3e3e;
+            margin-bottom: 24px;
+        }
+        /* principles */
+        .principles {
+            background: #f9f9f9;
+            padding: 80px 0;
+            border-radius: 48px;
+            margin: 40px 0;
+        }
+        .principles h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 56px;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 60px;
+        }
+        .principle-card {
+            background: white;
+            padding: 32px;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .principle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+        }
+        .principle-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .principle-card h3::before {
+            content: "●";
+            color: #c6a43f;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .principle-card p {
+            color: #5e5e5e;
+            line-height: 1.6;
+        }
+        /* guidance */
+        .guidance-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            padding: 80px 0;
+        }
+        .guidance-left h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+        .guidance-left p {
+            color: #5e5e5e;
+            font-size: 1.125rem;
+        }
+        .guidance-right ul {
+            list-style: none;
+        }
+        .guidance-right li {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #ececec;
+        }
+        .guidance-right a {
+            text-decoration: none;
+            color: #1e1e1e;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: color 0.2s;
+        }
+        .guidance-right a:hover {
+            color: #c6a43f;
+        }
+        /* cta */
+        .cta-section {
+            background: #f9f9f9;
+            border-radius: 48px;
+            padding: 80px 0;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .cta-wrapper h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+        .cta-wrapper p {
+            color: #5e5e5e;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #c6a43f;
+            color: #1e1e1e;
+            font-weight: 600;
+            padding: 14px 42px;
+            border-radius: 60px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, color 0.2s;
+        }
+        .cta-button:hover {
+            background: #c6a43f;
+            color: white;
+        }
+        .cta-note {
+            margin-top: 24px;
+            font-size: 0.95rem;
+            color: #8a8a8a;
+        }
+        /* footer */
+        footer {
+            padding: 48px 0;
+            text-align: center;
+            color: #8a8a8a;
+            border-top: 1px solid #ececec;
+        }
+        /* mobile */
+        @media (max-width: 700px) {
+            .container { padding: 0 24px; }
+            .header-bar { flex-direction: column; gap: 20px; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            .principles-grid { grid-template-columns: 1fr; }
+            .guidance-section { grid-template-columns: 1fr; gap: 40px; }
+            .hero { padding: 60px 0; }
+            .principles, .cta-section { border-radius: 32px; }
+        }
+    </style>
 </head>
 <body>
-
-<header>
-  <div class="container">
-    <div class="header-bar">
-      <a href="index.html" class="logo">
-        HAIRULANUAR<span>FINANCIAL</span>
-      </a>
-
-      <nav>
-        <a href="index.html" class="nav-link active" aria-current="page">Panduan</a>
-        <a href="perjalanan.html" class="nav-link">Perjalanan</a>
-        <a href="ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
-        <a href="bercakap.html" class="nav-link">Bercakap</a>
-        <a href="https://wa.me/+601127657730" class="nav-cta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="container">
-    <div class="grid">
-
-      <section class="hero">
-        <h1>Panduan,<br>bukan jualan.</h1>
-        
-        <div class="hero-content">
-          <p class="lead">
-            Perancangan kewangan yang baik bermula dengan cara berfikir yang betul.
-          </p>
-          <p>
-            Saya membantu keluarga Muslim menyusun perlindungan, pelaburan, dan perancangan jangka panjang secara patuh Syariah — bukan dengan paksaan atau janji, tetapi dengan kefahaman dan ketenangan.
-          </p>
-          <p>
-            Halaman ini bukan tentang produk.<br>
-            <strong>Ia tentang pegangan.</strong>
-          </p>
-          <p>
-            Inilah cara saya melihat kewangan, amanah, dan tanggungjawab terhadap keluarga — dan bagaimana cara berfikir ini membentuk setiap perbualan yang dijalankan.
-          </p>
+    <header>
+        <div class="container">
+            <div class="header-bar">
+                <a href="index.html" class="logo">HAIRULANUAR<span>FINANCIAL</span></a>
+                <nav>
+                    <a href="index.html" class="nav-link active">Panduan</a>
+                    <a href="perjalanan.html" class="nav-link">Perjalanan</a>
+                    <a href="ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
+                    <a href="bercakap.html" class="nav-link">Bercakap</a>
+                    <a href="https://wa.me/+601127657730" class="nav-cta">WhatsApp</a>
+                </nav>
+            </div>
         </div>
-      </section>
+    </header>
 
-      <section class="principles-container">
-        <h2 class="section-label">Prinsip Kami</h2>
-        
-        <div class="principles-grid">
-          <article class="principle-card">
-            <h3>Niat sebagai teras</h3>
-            <p>Perbualan tentang kewangan bukan sekadar tentang angka. Ia tentang amanah dan menjaga keluarga tanpa rasa ragu.</p>
-          </article>
-
-          <article class="principle-card">
-            <h3>Generasi, bukan suku tahun</h3>
-            <p>Kami merancang untuk fasa hidup — sepuluh, dua puluh, tiga puluh tahun ke hadapan untuk ketenangan sebenar.</p>
-          </article>
-
-          <article class="principle-card">
-            <h3>Mendidik sebelum mencadang</h3>
-            <p>Peranan kami bukan untuk memujuk. Ia untuk membantu anda memahami supaya keputusan dibuat dengan yakin.</p>
-          </article>
-
-          <article class="principle-card">
-            <h3>Ketenangan sebagai isyarat</h3>
-            <p>Kami memperlahankan proses, mendengar dengan teliti, dan memberi ruang berfikir tanpa rasa takut.</p>
-          </article>
-
-          <article class="principle-card">
-            <h3>Kewangan yang membosankan</h3>
-            <p>Kewangan yang baik harus kukuh, beretika, dan boleh dijangka — supaya anda boleh fokus kepada kehidupan sebenar.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="guidance-section">
-        <h2>Bagaimana prinsip ini digunakan</h2>
-
-        <div class="guidance-content">
-          <p>Prinsip ini bukan teori. Ia membentuk cara perlindungan disusun, pelaburan dipilih, dan keputusan jangka panjang dibuat.</p>
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Panduan,<br>bukan jualan.</h1>
+                <p class="lead">Perancangan kewangan yang baik bermula dengan cara berfikir yang betul.</p>
+                <p>Saya membantu keluarga Muslim menyusun perlindungan, pelaburan, dan perancangan jangka panjang secara patuh Syariah — bukan dengan paksaan atau janji, tetapi dengan kefahaman dan ketenangan.</p>
+                <p>Halaman ini bukan tentang produk.<br><strong>Ia tentang pegangan.</strong></p>
+                <p>Inilah cara saya melihat kewangan, amanah, dan tanggungjawab terhadap keluarga — dan bagaimana cara berfikir ini membentuk setiap perbualan yang dijalankan.</p>
+            </section>
         </div>
 
-        <div class="guidance-links">
-          <ul>
-            <li>
-              <a href="/artikel/kenapa-takaful-tak-berfungsi.html">
-                Kenapa sesetengah orang rasa takaful “tak berfungsi”?
-              </a>
-            </li>
-            <li>
-              <a href="/artikel/memahami-saringan.html">
-                Memahami saringan, bukan mengejar harga dalam pelaburan
-              </a>
-            </li>
-          </ul>
+        <div class="container">
+            <section class="principles">
+                <h2>Prinsip Kami</h2>
+                <div class="principles-grid">
+                    <article class="principle-card">
+                        <h3>Niat sebagai teras</h3>
+                        <p>Perbualan tentang kewangan bukan sekadar tentang angka. Ia tentang amanah dan menjaga keluarga tanpa rasa ragu.</p>
+                    </article>
+                    <article class="principle-card">
+                        <h3>Generasi, bukan suku tahun</h3>
+                        <p>Kami merancang untuk fasa hidup — sepuluh, dua puluh, tiga puluh tahun ke hadapan untuk ketenangan sebenar.</p>
+                    </article>
+                    <article class="principle-card">
+                        <h3>Mendidik sebelum mencadang</h3>
+                        <p>Peranan kami bukan untuk memujuk. Ia untuk membantu anda memahami supaya keputusan dibuat dengan yakin.</p>
+                    </article>
+                    <article class="principle-card">
+                        <h3>Ketenangan sebagai isyarat</h3>
+                        <p>Kami memperlahankan proses, mendengar dengan teliti, dan memberi ruang berfikir tanpa rasa takut.</p>
+                    </article>
+                    <article class="principle-card">
+                        <h3>Kewangan yang membosankan</h3>
+                        <p>Kewangan yang baik harus kukuh, beretika, dan boleh dijangka — supaya anda boleh fokus kepada kehidupan sebenar.</p>
+                    </article>
+                </div>
+            </section>
         </div>
-      </section>
 
-    </div> <!-- /.grid -->
-  </div> <!-- /.container -->
+        <div class="container">
+            <section class="guidance-section">
+                <div class="guidance-left">
+                    <h2>Bagaimana prinsip ini digunakan</h2>
+                    <p>Prinsip ini bukan teori. Ia membentuk cara perlindungan disusun, pelaburan dipilih, dan keputusan jangka panjang dibuat.</p>
+                </div>
+                <div class="guidance-right">
+                    <ul>
+                        <li><a href="/artikel/kenapa-takaful-tak-berfungsi.html">Kenapa sesetengah orang rasa takaful “tak berfungsi”? →</a></li>
+                        <li><a href="/artikel/memahami-saringan.html">Memahami saringan, bukan mengejar harga dalam pelaburan →</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
 
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-wrapper">
-        <h2>Jika ini terasa selari</h2>
-        <p>Mungkin wajar kita berbual — bukan untuk membuat keputusan segera, tetapi untuk memahami apa yang penting untuk keluarga anda.</p>
-        <a href="https://wa.me/+601127657730" class="cta-button" target="_blank" rel="noopener noreferrer">
-          WhatsApp Hairul
-        </a>
-        <p class="cta-note">Apabila anda bersedia.</p>
-      </div>
-    </div>
-  </section>
-</main>
+        <div class="container">
+            <section class="cta-section">
+                <div class="cta-wrapper">
+                    <h2>Jika ini terasa selari</h2>
+                    <p>Mungkin wajar kita berbual — bukan untuk membuat keputusan segera, tetapi untuk memahami apa yang penting untuk keluarga anda.</p>
+                    <a href="https://wa.me/+601127657730" class="cta-button">WhatsApp Hairul</a>
+                    <p class="cta-note">Apabila anda bersedia.</p>
+                </div>
+            </section>
+        </div>
+    </main>
 
-<footer>
-  <div class="container">
-    <p class="footer-note">
-      &copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.
-    </p>
-  </div>
-</footer>
-
+    <footer>
+        <div class="container">
+            <p>© 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.</p>
+        </div>
+    </footer>
 </body>
 </html>
