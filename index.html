@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- CSS: relative path for portability -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <script type="application/ld+json">
     {
@@ -19,7 +20,6 @@
       "@type": "FinancialService",
       "name": "Hairulanuar Financial",
       "description": "Falsafah dan prinsip perancangan kewangan patuh Syariah oleh Hairul Anuar.",
-      "url": "https://hairulanuarfinancial.github.io",
       "telephone": "+601127657730",
       "address": {
         "@type": "PostalAddress",
@@ -28,22 +28,21 @@
     }
     </script>
 </head>
-
 <body>
 
 <header>
   <div class="container">
     <div class="header-bar">
-      <a href="/index.html" class="logo">
+      <a href="index.html" class="logo">
         HAIRULANUAR<span>FINANCIAL</span>
       </a>
 
       <nav>
-        <a href="/index.html" class="nav-link active">Panduan</a>
-        <a href="/perjalanan.html" class="nav-link">Perjalanan</a>
-        <a href="/ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
-        <a href="/bercakap.html" class="nav-link">Bercakap</a>
-        <a href="https://wa.me/601127657730" class="nav-cta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="index.html" class="nav-link active" aria-current="page">Panduan</a>
+        <a href="perjalanan.html" class="nav-link">Perjalanan</a>
+        <a href="ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
+        <a href="bercakap.html" class="nav-link">Bercakap</a>
+        <a href="https://wa.me/+601127657730" class="nav-cta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </nav>
     </div>
   </div>
@@ -127,19 +126,21 @@
         </div>
       </section>
 
-    </div> </div> <section class="cta-section">
+    </div> <!-- /.grid -->
+  </div> <!-- /.container -->
+
+  <section class="cta-section">
     <div class="container">
       <div class="cta-wrapper">
         <h2>Jika ini terasa selari</h2>
         <p>Mungkin wajar kita berbual — bukan untuk membuat keputusan segera, tetapi untuk memahami apa yang penting untuk keluarga anda.</p>
-        <a href="https://wa.me/601127657730" class="cta-button" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/+601127657730" class="cta-button" target="_blank" rel="noopener noreferrer">
           WhatsApp Hairul
         </a>
         <p class="cta-note">Apabila anda bersedia.</p>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
