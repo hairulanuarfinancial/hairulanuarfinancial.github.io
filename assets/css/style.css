@@ -150,3 +150,16 @@ nav a {
   font-size: 15px;
   color: #444;
 }
+
+/* This ensures the paragraphs don't spread out horizontally */
+.hero-content {
+  grid-column: 1 / span 6; /* Occupies 6 columns of the internal section grid */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust the H1 to span more columns if needed */
+.hero h1 {
+  grid-column: 1 / -1; /* Spans across the top of the section */
+  margin-bottom: 40px;
+}
