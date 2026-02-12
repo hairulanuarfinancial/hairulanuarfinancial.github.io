@@ -1,264 +1,278 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjalanan Kewangan Keluarga Patuh Syariah | Hairulanuar Financial</title>
+    <meta name="description" content="Cara Hairulanuar Financial membimbing keluarga Muslim melalui perjalanan kewangan patuh Syariah — daripada perlindungan asas hingga persaraan bermakna.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <title>Perjalanan Kewangan Keluarga Patuh Syariah | Hairulanuar Financial</title>
-  <meta name="description" content="Cara Hairulanuar Financial membimbing keluarga Muslim melalui perjalanan kewangan patuh Syariah — daripada perlindungan asas, pembinaan berdisiplin, hingga persaraan yang bermakna." />
+    <style>
+        /* Using the Calm Premium CSS Variables */
+        :root {
+            --bg-color: #F9F7F2;
+            --text-main: #2A2A2A;
+            --text-muted: #666666;
+            --accent-green: #3E4B3E;
+            --gold-accent: #B8A187;
+            --serif-font: 'Playfair Display', serif;
+            --sans-font: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <!-- Light Philosophy Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Perjalanan Kewangan Keluarga Patuh Syariah",
-    "description": "Pendekatan Hairulanuar Financial dalam membimbing keluarga Muslim melalui fasa perlindungan, pembinaan kekayaan, dan persaraan secara patuh Syariah.",
-    "author": {
-      "@type": "Person",
-      "name": "Hairul Anuar",
-      "jobTitle": "Perancang Kewangan Patuh Syariah",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Hairulanuar Financial",
-        "url": "https://hairulanuarfinancial.github.io/"
-      }
-    }
-  }
-  </script>
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Header Navigation */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .logo {
+            font-family: var(--serif-font);
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: var(--accent-green);
+        }
+
+        .logo span { font-weight: 400; color: var(--gold-accent); opacity: 0.8; }
+
+        nav { display: flex; gap: 32px; align-items: center; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--transition);
+        }
+
+        nav a:hover { color: var(--gold-accent); }
+
+        .nav-link.active { 
+            color: var(--accent-green); 
+            border-bottom: 1px solid var(--gold-accent); 
+            padding-bottom: 4px; 
+        }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: left;
+        }
+
+        h1 {
+            font-family: var(--serif-font);
+            font-size: clamp(40px, 7vw, 64px);
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--accent-green);
+            margin-bottom: 30px;
+        }
+
+        .lead {
+            font-size: 1.5rem;
+            font-family: var(--serif-font);
+            font-style: italic;
+            color: var(--gold-accent);
+            margin-bottom: 30px;
+        }
+
+        /* Journey Phases */
+        .phase-section {
+            padding: 100px 0;
+            border-top: 1px solid rgba(184, 161, 135, 0.2);
+            position: relative;
+        }
+
+        .phase-number {
+            font-family: var(--serif-font);
+            font-size: 1.2rem;
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        h2 {
+            font-family: var(--serif-font);
+            font-size: 2.5rem;
+            color: var(--accent-green);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .phase-content {
+            max-width: 700px;
+        }
+
+        blockquote {
+            font-family: var(--serif-font);
+            font-size: 1.4rem;
+            font-style: italic;
+            margin: 40px 0;
+            padding-left: 30px;
+            border-left: 3px solid var(--gold-accent);
+            color: var(--accent-green);
+        }
+
+        /* Synthesis Section */
+        .synthesis {
+            background: white;
+            padding: 80px 60px;
+            border-radius: 40px;
+            margin: 60px 0;
+            border: 1px solid rgba(184, 161, 135, 0.15);
+        }
+
+        /* CTA */
+        .cta-box {
+            background-color: var(--accent-green);
+            color: white;
+            border-radius: 50px;
+            padding: 80px 40px;
+            text-align: center;
+            margin: 100px 0;
+        }
+
+        .cta-box h2 { color: white; margin-bottom: 20px; }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--accent-green);
+            font-weight: 600;
+            padding: 18px 48px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            background: var(--gold-accent);
+            color: white;
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(184, 161, 135, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-bar { flex-direction: column; gap: 20px; }
+            .synthesis { padding: 40px 20px; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= Header ================= -->
 <header>
   <div class="container">
     <div class="header-bar">
-      <a href="index.html" class="logo">
-        HAIRULANUAR<span>FINANCIAL</span>
-      </a>
-
+      <a href="index.html" class="logo">HAIRULANUAR<span>FINANCIAL</span></a>
       <nav>
-        <a href="index.html" class="nav-link">Panduan</a>
+        <a href="index.html">Panduan</a>
         <a href="perjalanan.html" class="nav-link active">Perjalanan</a>
-        <a href="ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
-        <a href="bercakap.html" class="nav-link">Bercakap</a>
-        <a href="https://wa.me/601127657730" class="nav-cta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="ruang-ilmu.html">Ruang Ilmu</a>
+        <a href="https://wa.me/601127657730" class="nav-cta">WhatsApp</a>
       </nav>
     </div>
   </div>
 </header>
 
-<!-- ================= Main ================= -->
 <main>
   <div class="container">
-    <div class="grid">
-
-      <!-- ===== Hero ===== -->
-      <section class="col-main">
+    <section class="hero">
         <h1>Tiga Fasa Kehidupan.<br>Satu Perjalanan.</h1>
+        <p class="lead">Keperluan kewangan keluarga berubah mengikut fasa hidup. Itu perkara biasa.</p>
+        <div class="phase-content">
+            <p>Yang jarang dibincangkan ialah bagaimana setiap keputusan kewangan sebenarnya saling berkait — satu langkah hari ini membentuk ketenangan bertahun-tahun ke hadapan.</p>
+        </div>
+    </section>
 
-        <p class="lead">
-          Keperluan kewangan keluarga berubah mengikut fasa hidup.<br>
-          Itu perkara biasa.
-        </p>
+    <section class="phase-section">
+        <span class="phase-number">Fasa Pertama</span>
+        <h2>Melindungi Asas</h2>
+        <div class="phase-content">
+            <p>Kebanyakan keluarga bermula di sini. Tanggungjawab bertambah, kebergantungan semakin jelas.</p>
+            <blockquote>“Jika sesuatu berlaku, adakah mereka benar-benar terjaga?”</blockquote>
+            <p>Perlindungan bukan tentang polisi. Ia tentang memastikan kehidupan keluarga tidak runtuh ketika diuji. Melalui Takaful Keluarga, kita menyusun struktur patuh Syariah untuk berkongsi risiko dengan adil.</p>
+        </div>
+    </section>
 
-        <p>
-          Yang jarang dibincangkan ialah bagaimana setiap keputusan kewangan
-          sebenarnya saling berkait — satu langkah hari ini membentuk ketenangan
-          bertahun-tahun ke hadapan.
-        </p>
+    <section class="phase-section">
+        <span class="phase-number">Fasa Kedua</span>
+        <h2>Membina dengan Niat</h2>
+        <div class="phase-content">
+            <p>Apabila perlindungan sudah kukuh, fokus mula beralih kepada pendidikan anak, rumah yang stabil, dan perjalanan hidup yang lebih terancang.</p>
+            <blockquote>“Bagaimana aku membina simpanan tanpa melanggar prinsip, dan tanpa perlu hidup dalam kebimbangan?”</blockquote>
+            <p>Kami melihat pelaburan sebagai amalan jangka panjang — dibina atas disiplin dan kesabaran. Melalui pelaburan patuh Syariah, kekayaan dibina secara konsisten supaya anda boleh fokus kepada kehidupan sebenar.</p>
+        </div>
+    </section>
 
-        <p>
-          Saya tidak melihat kewangan sebagai senarai produk.<br>
-          Saya melihatnya sebagai satu perjalanan yang berkembang bersama kehidupan anda.
-        </p>
+    <section class="phase-section">
+        <span class="phase-number">Fasa Ketiga</span>
+        <h2>Menyusun Makna</h2>
+        <div class="phase-content">
+            <p>Pada satu tahap, masa menjadi lebih berharga daripada pencapaian. Persaraan bukan tentang berhenti bekerja, tetapi memastikan kehidupan selepas itu kekal bermakna.</p>
+            <blockquote>“Adakah rezeki aku nanti cukup, bersih, dan meninggalkan kesan yang baik?”</blockquote>
+            <p>Kami membantu menyusun peralihan ini — daripada aliran pendapatan patuh Syariah hingga penyusunan harta yang menjaga keharmonian keluarga.</p>
+        </div>
+    </section>
 
-        <p class="entity-note">
-          Halaman ini menerangkan bagaimana Hairulanuar Financial membimbing keluarga Muslim
-          menyusun perancangan kewangan patuh Syariah secara berperingkat dan saling bersambung.
-        </p>
-      </section>
+    <section class="synthesis">
+        <h2>Satu Sistem yang Berkait</h2>
+        <p>Ketiga-tiga fasa ini tidak berdiri sendiri. Perlindungan memberi ruang untuk membina. Pembinaan yang berdisiplin menyokong persaraan. Persaraan yang dirancang menyempurnakan amanah awal kehidupan.</p>
+    </section>
 
-      <div class="col-full"><hr></div>
-
-      <!-- ===== Phase 1 ===== -->
-      <section class="col-main">
-        <h2>Fasa Pertama: Melindungi Asas</h2>
-
-        <p>Kebanyakan keluarga bermula di sini.</p>
-
-        <p>
-          Tanggungjawab bertambah.<br>
-          Kebergantungan semakin jelas.
-        </p>
-
-        <p>
-          Dan satu soalan senyap mula terasa berat:
-        </p>
-
-        <p><em>“Jika sesuatu berlaku, adakah mereka benar-benar terjaga?”</em></p>
-
-        <p>
-          Perlindungan bukan tentang polisi.<br>
-          Ia tentang memastikan kehidupan keluarga tidak runtuh ketika diuji.
-        </p>
-
-        <p>
-          Pendekatan kami melalui Takaful Keluarga berteraskan konsep tolong-menolong —
-          satu struktur patuh Syariah untuk berkongsi risiko dengan adil dan jelas.
-        </p>
-
-        <p>
-          Apabila asas ini terjaga, ruang bernafas mula wujud.<br>
-          Keputusan lain boleh dibuat dengan lebih yakin dan tenang.
-        </p>
-      </section>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== Phase 2 ===== -->
-      <section class="col-main">
-        <h2>Fasa Kedua: Membina dengan Niat</h2>
-
-        <p>
-          Apabila perlindungan sudah kukuh,
-          fokus keluarga mula bergerak ke hadapan.
-        </p>
-
-        <p>
-          Pendidikan anak.<br>
-          Rumah yang stabil.<br>
-          Perjalanan hidup yang lebih terancang.
-        </p>
-
-        <p>
-          Soalan juga berubah:
-        </p>
-
-        <p>
-          <em>
-            “Bagaimana aku membina simpanan tanpa melanggar prinsip,
-            dan tanpa perlu hidup dalam kebimbangan pasaran?”
-          </em>
-        </p>
-
-        <p>
-          Kami melihat pelaburan sebagai amalan jangka panjang —
-          dibina atas disiplin, kefahaman, dan kesabaran.
-        </p>
-
-        <p>
-          Melalui pelaburan patuh Syariah yang difahami,
-          kekayaan dibina secara konsisten,
-          tanpa perlu dipantau setiap hari.
-        </p>
-
-        <p>
-          Hasilnya bukan sekadar angka,
-          tetapi ruang untuk hidup dengan lebih fokus dan bermakna.
-        </p>
-      </section>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== Phase 3 ===== -->
-      <section class="col-main">
-        <h2>Fasa Ketiga: Menyusun Makna</h2>
-
-        <p>
-          Pada satu tahap,
-          masa dan ketenangan menjadi lebih berharga daripada pencapaian.
-        </p>
-
-        <p>
-          Soalan yang muncul juga lebih mendalam:
-        </p>
-
-        <p>
-          <em>
-            “Adakah rezeki aku nanti cukup, bersih,
-            dan meninggalkan kesan yang baik?”
-          </em>
-        </p>
-
-        <p>
-          Persaraan bukan tentang berhenti bekerja,
-          tetapi tentang memastikan kehidupan selepas itu kekal bermakna.
-        </p>
-
-        <p>
-          Kami membantu menyusun peralihan ini dengan penuh niat —
-          daripada aliran pendapatan patuh Syariah,
-          hingga penyusunan harta yang menjaga keharmonian keluarga.
-        </p>
-
-        <p>
-          Apabila semuanya jelas,
-          kebebasan itu terasa —
-          kebebasan untuk memberi tumpuan kepada ibadah,
-          keluarga, dan komuniti.
-        </p>
-      </section>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== Synthesis ===== -->
-      <section class="col-main">
-        <h2>Satu Perjalanan, Bukan Bahagian Terpisah</h2>
-
-        <p>
-          Ketiga-tiga fasa ini tidak berdiri sendiri.
-        </p>
-
-        <p>
-          Perlindungan memberi ruang untuk membina.<br>
-          Pembinaan yang berdisiplin menyokong persaraan.<br>
-          Persaraan yang dirancang menyempurnakan amanah awal kehidupan.
-        </p>
-
-        <p>
-          Inilah sebabnya kami melihat perancangan kewangan
-          sebagai satu sistem yang saling berkait — bukan keputusan terasing.
-        </p>
-      </section>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== CTA ===== -->
-      <section class="col-main">
+    <section class="cta-box">
         <h2>Mulakan dari Fasa Anda</h2>
-
-        <p>
-          Setiap keluarga berada di titik yang berbeza.
-        </p>
-
-        <p>
-          Jika anda mahu,
-          kita boleh mulakan dengan satu perbualan ringkas —
-          untuk memahami di mana anda berada sekarang,
-          dan apa yang paling penting untuk keluarga anda.
-        </p>
-
-        <a href="https://wa.me/601127657730" class="cta-button" target="_blank" rel="noopener noreferrer">
-          WhatsApp Hairul
-        </a>
-
-        <p class="cta-note">Perbualan ringkas. Tiada tekanan.</p>
-      </section>
-
-    </div>
+        <p>Setiap keluarga berada di titik yang berbeza. Kita boleh mulakan dengan satu perbualan ringkas tanpa tekanan.</p>
+        <a href="https://wa.me/601127657730" class="cta-button">Hubungi Hairul di WhatsApp</a>
+    </section>
   </div>
 </main>
 
-<!-- ================= Footer ================= -->
 <footer>
   <div class="container">
-    <p class="footer-note">
-      &copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.
-    </p>
+    <p>&copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.</p>
   </div>
 </footer>
 
