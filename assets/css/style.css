@@ -1,5 +1,6 @@
 /* Project: Hairulanuar Financial - 2026 Premium Refresh
    Design Philosophy: Calm Premium (Editorial Serif + Swiss Grid)
+   CTO Rectified Version: v2.0 (Navigation & Layout Symmetry)
 */
 
 /* ===== 1. VARIABLES & FOUNDATION ===== */
@@ -25,11 +26,11 @@ body {
   padding: 0;
   background-color: var(--bg-color);
   color: var(--text-main);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* ===== 2. TYPOGRAPHY ===== */
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--serif-font);
   font-weight: 400;
   line-height: 1.1;
@@ -44,123 +45,29 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(28px, 4vw, 40px);
-  margin-bottom: 20px;
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 25px;
 }
 
 .lead {
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 400;
-  color: var(--text-muted);
+  font-size: clamp(18px, 2vw, 24px);
+  font-family: var(--serif-font);
+  font-style: italic;
+  color: var(--gold-accent);
   max-width: 650px;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 40px;
 }
 
-/* ===== 3. THE GRID SYSTEM ===== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
+p {
+  margin-bottom: 1.5rem;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 32px;
+/* ===== 3. HEADER & NAVIGATION (RECTIFIED) ===== */
+header {
+  border-bottom: 1px solid rgba(184, 161, 135, 0.15);
 }
 
-section {
-  border-top: 1px solid rgba(184, 161, 135, 0.2); /* Subtle gold divider */
-  padding: 100px 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 32px;
-}
-
-.hero {
-  border-top: none;
-  padding-top: 60px;
-}
-
-/* ===== 4. COMPONENT PLACEMENT ===== */
-
-/* Hero */
-.hero h1 {
-  grid-column: 1 / span 10;
-}
-
-.hero-content {
-  grid-column: 1 / span 7;
-}
-
-/* Principles (Bento-style adjustment) */
-.principles-grid {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-}
-
-.principle-card {
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.3); /* Glassmorphism start */
-  border-radius: 12px;
-  border: 1px solid transparent;
-  transition: var(--transition);
-}
-
-.principle-card:hover {
-  background: #ffffff;
-  border-color: var(--gold-accent);
-  transform: translateY(-5px);
-}
-
-.principle-card h3 {
-  font-size: 24px;
-  border-top: 1px solid var(--gold-accent);
-  padding-top: 15px;
-  margin-bottom: 10px;
-}
-
-.principle-card p {
-  font-size: 16px;
-  color: var(--text-muted);
-}
-
-/* Guidance (Asymmetrical) */
-.guidance-section h2 {
-  grid-column: 1 / span 5;
-}
-
-.guidance-content {
-  grid-column: 1 / span 6;
-}
-
-.guidance-links {
-  grid-column: 8 / span 5;
-}
-
-.guidance-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.guidance-links li a {
-  display: block;
-  padding: 12px 0;
-  color: var(--text-main);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  transition: var(--transition);
-}
-
-.guidance-links li a:hover {
-  padding-left: 10px;
-  color: var(--accent-green);
-}
-
-/* ===== 5. NAVIGATION ===== */
 .header-bar {
   display: flex;
   align-items: center;
@@ -174,66 +81,208 @@ section {
   text-decoration: none;
   color: var(--accent-green);
   font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.logo span {
+  font-weight: 400;
+  color: var(--gold-accent);
+  opacity: 0.8;
 }
 
 nav {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 40px; /* Space between links group and CTA button */
 }
 
-nav a {
+.nav-links {
+  display: flex;
+  gap: 30px; /* Space between individual text links */
+}
+
+.nav-link {
   text-decoration: none;
   color: var(--text-main);
-  font-size: 13px;
+  font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  opacity: 0.7;
+  transition: var(--transition);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  color: var(--accent-green);
+}
+
+/* Active State Underline */
+.nav-link.active {
+  opacity: 1;
+  color: var(--accent-green);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--gold-accent);
+}
+
+/* Header WhatsApp Button */
+.nav-cta {
+  background: var(--accent-green);
+  color: #fff !important;
+  text-decoration: none;
+  padding: 12px 28px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
   transition: var(--transition);
 }
 
-nav a:hover, .nav-link.active {
-  color: var(--gold-accent);
+.nav-cta:hover {
+  background: var(--gold-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(62, 75, 62, 0.1);
 }
 
-/* ===== 6. CTA & FOOTER ===== */
+/* ===== 4. LAYOUT & GRID ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+main {
+  padding: 80px 0;
+}
+
+section {
+  padding: 100px 0;
+  border-top: 1px solid rgba(184, 161, 135, 0.2);
+}
+
+section:first-of-type {
+  border-top: none;
+  padding-top: 40px;
+}
+
+/* Editorial Content Width (Best for reading) */
+.content-narrow {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* ===== 5. COMPONENTS ===== */
+
+/* Cards (Bento/Grid) */
+.card {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 30px;
+  border: 1px solid rgba(184, 161, 135, 0.15);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-accent);
+  box-shadow: 0 20px 40px rgba(62, 75, 62, 0.05);
+}
+
+/* Blockquotes (Used in Perjalanan) */
+blockquote {
+  font-family: var(--serif-font);
+  font-size: 1.5rem;
+  font-style: italic;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 3px solid var(--gold-accent);
+  color: var(--accent-green);
+}
+
+/* Buttons */
 .cta-button {
   display: inline-block;
   background: var(--accent-green);
   color: #fff;
   text-decoration: none;
   padding: 18px 45px;
-  font-weight: 500;
-  border-radius: 50px; /* Modern Pill */
+  font-weight: 600;
+  border-radius: 50px;
   transition: var(--transition);
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .cta-button:hover {
-  background: #2D362D;
-  transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(62, 75, 62, 0.15);
+  background: var(--gold-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(62, 75, 62, 0.1);
 }
 
-.footer-note {
-  border-top: 1px solid rgba(184, 161, 135, 0.2);
+/* Article Feed (Ruang Ilmu) */
+article {
   padding: 60px 0;
-  font-size: 14px;
-  color: var(--text-muted);
+  border-bottom: 1px solid rgba(184, 161, 135, 0.15);
+}
+
+article h2 { font-size: 2rem; }
+
+.read-more {
+  font-family: var(--serif-font);
+  font-style: italic;
+  color: var(--gold-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.read-more:hover {
+  color: var(--accent-green);
+  transform: translateX(5px);
+}
+
+/* ===== 6. FOOTER ===== */
+footer {
+  padding: 60px 0;
   text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(184, 161, 135, 0.1);
+  background-color: rgba(0,0,0,0.01);
 }
 
 /* ===== 7. MOBILE RESPONSIVE ===== */
-@media (max-width: 992px) {
-  .grid, section {
-    display: flex;
+@media (max-width: 850px) {
+  .header-bar {
     flex-direction: column;
+    gap: 25px;
+    padding: 30px 0;
   }
   
-  .hero h1, .hero-content, .guidance-section h2, .guidance-content, .guidance-links {
-    width: 100%;
+  nav {
+    flex-direction: column;
+    gap: 25px;
   }
+
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  h1 { font-size: 40px; }
   
-  .guidance-links {
-    margin-top: 40px;
-  }
+  section { padding: 60px 0; }
 }
