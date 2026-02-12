@@ -1,265 +1,239 @@
-/* ===== 1. SWISS BASE & TYPOGRAPHY ===== */
+/* Project: Hairulanuar Financial - 2026 Premium Refresh
+   Design Philosophy: Calm Premium (Editorial Serif + Swiss Grid)
+*/
+
+/* ===== 1. VARIABLES & FOUNDATION ===== */
+:root {
+  --bg-color: #F9F7F2;      /* Off-white/Cream */
+  --text-main: #2A2A2A;     /* Soft Charcoal */
+  --text-muted: #666666;
+  --accent-green: #3E4B3E;  /* Estate Green */
+  --gold-accent: #B8A187;   /* Champagne/Sand */
+  --serif-font: 'Playfair Display', serif;
+  --sans-font: 'Inter', sans-serif;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--sans-font);
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  color: #111111;
-  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* ===== 2. TYPOGRAPHY ===== */
+h1, h2, h3 {
+  font-family: var(--serif-font);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 0;
+  color: var(--accent-green);
 }
 
 h1 {
-  font-size: clamp(48px, 8vw, 80px);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  margin-top: 60px;
+  font-size: clamp(40px, 7vw, 72px);
+  letter-spacing: -0.01em;
   margin-bottom: 30px;
-  color: #111111;
 }
 
 h2 {
-  font-size: clamp(24px, 4vw, 32px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-top: 40px;
-  margin-bottom: 16px;
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 20px;
 }
 
 .lead {
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(18px, 2vw, 22px);
   font-weight: 400;
-  color: #666666;
-  max-width: 600px;
-  line-height: 1.4;
+  color: var(--text-muted);
+  max-width: 650px;
+  line-height: 1.5;
   margin-bottom: 40px;
 }
 
-/* ===== 2. THE SWISS GRID ===== */
-
+/* ===== 3. THE GRID SYSTEM ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
+  column-gap: 32px;
 }
 
-/* Sections use nested 12‑col grid for internal placement */
 section {
-  border-top: 1px solid #e5e5e5;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  grid-column: 1 / -1;
+  border-top: 1px solid rgba(184, 161, 135, 0.2); /* Subtle gold divider */
+  padding: 100px 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
+  column-gap: 32px;
 }
 
-/* Remove top border from hero section */
 .hero {
   border-top: none;
+  padding-top: 60px;
 }
 
-/* ===== 3. HERO PLACEMENT ===== */
+/* ===== 4. COMPONENT PLACEMENT ===== */
 
+/* Hero */
 .hero h1 {
-  grid-column: 2 / span 10;   /* wide headline */
-  margin-bottom: 40px;
+  grid-column: 1 / span 10;
 }
 
 .hero-content {
-  grid-column: 2 / span 6;    /* readable text block */
-  display: flex;
-  flex-direction: column;
+  grid-column: 1 / span 7;
 }
 
-/* ===== 4. PRINCIPLES GRID ===== */
-
+/* Principles (Bento-style adjustment) */
 .principles-grid {
-  grid-column: 2 / -1;
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.principle-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.3); /* Glassmorphism start */
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.principle-card:hover {
+  background: #ffffff;
+  border-color: var(--gold-accent);
+  transform: translateY(-5px);
 }
 
 .principle-card h3 {
-  border-top: 2px solid #111;
-  padding-top: 12px;
-  margin-top: 0;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 24px;
+  border-top: 1px solid var(--gold-accent);
+  padding-top: 15px;
+  margin-bottom: 10px;
 }
 
 .principle-card p {
-  font-size: 15px;
-  color: #444;
+  font-size: 16px;
+  color: var(--text-muted);
 }
 
-/* Optional hover effect */
-.principle-card:hover {
-  background-color: #f9f9f9;
-  transition: background 0.2s ease;
-}
-
-/* ===== 5. GUIDANCE SECTION (3‑COLUMN ASYMMETRY) ===== */
-
+/* Guidance (Asymmetrical) */
 .guidance-section h2 {
-  grid-column: 2 / span 4;    /* title on left */
+  grid-column: 1 / span 5;
 }
 
 .guidance-content {
-  grid-column: 6 / span 3;    /* explanation in middle */
+  grid-column: 1 / span 6;
 }
 
 .guidance-links {
-  grid-column: 9 / span 4;    /* links on right */
+  grid-column: 8 / span 5;
 }
 
 .guidance-links ul {
   list-style: none;
-  padding-left: 0;
-  margin: 0;
+  padding: 0;
 }
 
-.guidance-links li {
-  margin-bottom: 0.75rem;
+.guidance-links li a {
+  display: block;
+  padding: 12px 0;
+  color: var(--text-main);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
 }
 
-/* ===== 6. NAVIGATION ===== */
+.guidance-links li a:hover {
+  padding-left: 10px;
+  color: var(--accent-green);
+}
 
+/* ===== 5. NAVIGATION ===== */
 .header-bar {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  padding: 40px 0;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 30px 0;
+}
+
+.logo {
+  font-family: var(--serif-font);
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--accent-green);
+  font-weight: 600;
 }
 
 nav {
   display: flex;
-  gap: 24px;
+  gap: 32px;
 }
 
 nav a {
   text-decoration: none;
-  color: #111;
-  font-size: 14px;
-  font-weight: 600;
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  transition: var(--transition);
 }
 
-/* Active page indicator */
-.nav-link.active {
-  border-bottom: 2px solid #111;
-  padding-bottom: 4px;
+nav a:hover, .nav-link.active {
+  color: var(--gold-accent);
 }
 
-/* ===== 7. FOCUS STYLES (ACCESSIBILITY) ===== */
-
-a:focus, button:focus {
-  outline: 2px solid #1f3d2b;
-  outline-offset: 2px;
-}
-
-/* Remove default outline for mouse users, keep for keyboard */
-a:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* ===== 8. CTA & FOOTER ===== */
-
-.cta-wrapper {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 60px 0;
-}
-
+/* ===== 6. CTA & FOOTER ===== */
 .cta-button {
   display: inline-block;
-  background: #111;
+  background: var(--accent-green);
   color: #fff;
   text-decoration: none;
-  padding: 16px 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 0; /* swiss square */
-  margin-top: 16px;
+  padding: 18px 45px;
+  font-weight: 500;
+  border-radius: 50px; /* Modern Pill */
+  transition: var(--transition);
+  margin-top: 20px;
 }
 
 .cta-button:hover {
-  background: #333;
-}
-
-.cta-note {
-  color: #666;
-  font-size: 14px;
-  margin-top: 24px;
+  background: #2D362D;
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(62, 75, 62, 0.15);
 }
 
 .footer-note {
-  border-top: 1px solid #e5e5e5;
-  padding: 40px 0;
+  border-top: 1px solid rgba(184, 161, 135, 0.2);
+  padding: 60px 0;
   font-size: 14px;
-  color: #666;
+  color: var(--text-muted);
   text-align: center;
 }
 
-/* ===== 9. MOBILE RESPONSIVENESS ===== */
-
-@media (max-width: 768px) {
-  /* Switch to block layout for simplicity */
-  .grid,
-  section {
-    display: block;
-  }
-
-  .container {
-    padding: 0 20px;
-  }
-
-  .hero h1,
-  .hero-content,
-  .guidance-section h2,
-  .guidance-content,
-  .guidance-links {
-    grid-column: auto; /* reset */
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .principles-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .header-bar {
+/* ===== 7. MOBILE RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .grid, section {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
   }
-
-  nav {
-    flex-wrap: wrap;
+  
+  .hero h1, .hero-content, .guidance-section h2, .guidance-content, .guidance-links {
+    width: 100%;
   }
-
-  section {
-    padding: 60px 0;
-  }
-
-  .hero h1 {
+  
+  .guidance-links {
     margin-top: 40px;
-    margin-bottom: 20px;
   }
 }
