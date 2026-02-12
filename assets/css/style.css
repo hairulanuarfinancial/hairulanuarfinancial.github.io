@@ -1,16 +1,15 @@
-/* Project: Hairulanuar Financial - 2026 Premium Refresh
-   Version: 3.0 (Master Layout Symmetry: 1100px Header / 900px Content)
+/* Project: Hairulanuar Financial - 2026 
+   Version: 4.0 (Mobile-First Optimization)
 */
 
 :root {
   --bg-color: #F9F7F2;
   --text-main: #2A2A2A;
-  --text-muted: #666666;
   --accent-green: #3E4B3E;
   --gold-accent: #B8A187;
   --serif-font: 'Playfair Display', serif;
   --sans-font: 'Inter', sans-serif;
-  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --transition: all 0.3s ease;
 }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
@@ -20,165 +19,119 @@ body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-main);
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
-/* ===== 1. LAYOUT CONTAINERS (The Logic) ===== */
-
-/* Use this for <header> on ALL pages */
-.container-header {
-  max-width: 1100px;
+/* ===== 1. MOBILE-FIRST CONTAINERS ===== */
+/* By default, containers are full width with padding */
+.container-header, .container-body, .container-reading {
+  width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 20px;
 }
 
-/* Use this for <main> content on index.html */
-.container-body {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 32px;
+/* Desktop expansion */
+@media (min-width: 1024px) {
+  .container-header, .container-body { max-width: 1100px; }
+  .container-reading { max-width: 900px; }
 }
 
-/* Use this for <main> content on Perjalanan, Ruang Ilmu, & Bercakap */
-.container-reading {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-/* ===== 2. HEADER & NAVIGATION (1100px Alignment) ===== */
+/* ===== 2. MOBILE-FIRST HEADER ===== */
 header {
   border-bottom: 1px solid rgba(184, 161, 135, 0.15);
   background: var(--bg-color);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 15px 0;
 }
 
 .header-bar {
   display: flex;
+  flex-direction: column; /* Stack logo and nav on mobile */
   align-items: center;
-  justify-content: space-between;
-  padding: 25px 0;
+  gap: 15px;
 }
 
 .logo {
   font-family: var(--serif-font);
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   color: var(--accent-green);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.05em;
-  flex-shrink: 0;
+  text-transform: uppercase;
 }
-
-.logo span { font-weight: 400; color: var(--gold-accent); opacity: 0.7; }
 
 nav {
   display: flex;
+  flex-direction: column; /* Stack links and CTA on mobile */
   align-items: center;
-  gap: 35px;
+  gap: 15px;
+  width: 100%;
 }
 
 .nav-links {
   display: flex;
-  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows links to wrap if they hit the edge */
+  gap: 12px;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-main);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.6;
-  transition: var(--transition);
-  position: relative;
-  padding-bottom: 4px;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
 }
 
-.nav-link:hover, .nav-link.active {
-  opacity: 1;
+.nav-link.active {
   color: var(--accent-green);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 1.5px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--gold-accent);
+  opacity: 1;
+  border-bottom: 1px solid var(--gold-accent);
 }
 
 .nav-cta {
   background: var(--accent-green);
   color: #fff !important;
   text-decoration: none;
-  padding: 10px 24px;
-  font-size: 11px;
+  padding: 8px 20px;
+  font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
   border-radius: 50px;
-  transition: var(--transition);
 }
 
-/* ===== 3. TYPOGRAPHY ===== */
+/* ===== 3. TABLET & DESKTOP ADJUSTMENTS (UPWARDS) ===== */
+@media (min-width: 768px) {
+  .header-bar {
+    flex-direction: row; /* Side-by-side on iPad and up */
+    justify-content: space-between;
+  }
+  
+  nav {
+    flex-direction: row; /* Links and button side-by-side */
+    width: auto;
+    gap: 25px;
+  }
+  
+  .logo { font-size: 18px; }
+  .nav-link { font-size: 11px; }
+}
+
+/* ===== 4. CONTENT STYLING ===== */
 h1 {
   font-family: var(--serif-font);
-  font-size: clamp(36px, 6vw, 68px);
+  font-size: clamp(28px, 8vw, 60px);
   color: var(--accent-green);
-  margin-bottom: 24px;
-  line-height: 1.1;
-}
-
-h2 {
-  font-family: var(--serif-font);
-  font-size: clamp(28px, 4vw, 40px);
-  color: var(--accent-green);
-  margin-bottom: 20px;
+  margin-top: 30px;
+  line-height: 1.2;
 }
 
 .lead {
-  font-size: clamp(18px, 2.5vw, 24px);
   font-family: var(--serif-font);
   font-style: italic;
+  font-size: clamp(16px, 4vw, 22px);
   color: var(--gold-accent);
-  margin-bottom: 40px;
-  line-height: 1.4;
-}
-
-/* ===== 4. CONTENT BLOCKS ===== */
-section {
-  padding: 80px 0;
-  border-top: 1px solid rgba(184, 161, 135, 0.1);
-}
-
-section:first-of-type { border-top: none; }
-
-article {
-  padding-bottom: 60px;
-  margin-bottom: 60px;
-  border-bottom: 1px solid rgba(184, 161, 135, 0.1);
-}
-
-/* ===== 5. IPAD & MOBILE FIXES ===== */
-@media (max-width: 1024px) {
-  .header-bar { padding: 20px 0; }
-  nav { gap: 20px; }
-  .nav-links { gap: 15px; }
-}
-
-@media (max-width: 850px) {
-  .header-bar {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links { display: none; } /* Mobile hides links to prevent clutter */
+  margin-bottom: 30px;
 }
