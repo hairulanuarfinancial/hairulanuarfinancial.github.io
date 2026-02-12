@@ -1,180 +1,239 @@
-/* Project: Hairulanuar Financial - 2026 
-   Philosophy: Editorial Minimalism (Calm Premium)
-   Version: 6.0 (iPad 10 & Mobile Proof)
+/* Project: Hairulanuar Financial - 2026 Premium Refresh
+   Design Philosophy: Calm Premium (Editorial Serif + Swiss Grid)
 */
 
+/* ===== 1. VARIABLES & FOUNDATION ===== */
 :root {
-  --bg-color: #F9F7F2;      /* Cloud Dancer Off-White */
+  --bg-color: #F9F7F2;      /* Off-white/Cream */
   --text-main: #2A2A2A;     /* Soft Charcoal */
-  --text-muted: #666666;    /* For secondary details */
+  --text-muted: #666666;
   --accent-green: #3E4B3E;  /* Estate Green */
-  --gold-accent: #B8A187;   /* Champagne Sand */
+  --gold-accent: #B8A187;   /* Champagne/Sand */
   --serif-font: 'Playfair Display', serif;
   --sans-font: 'Inter', sans-serif;
-  --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* 1. RESET & BASE */
-* { box-sizing: border-box; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   font-family: var(--sans-font);
+  margin: 0;
+  padding: 0;
   background-color: var(--bg-color);
   color: var(--text-main);
-  line-height: 1.8;
-  overflow-x: hidden; /* Prevent horizontal scroll bugs */
+  line-height: 1.7;
 }
 
-/* 2. THE DUAL-DENSITY CONTAINER */
+/* ===== 2. TYPOGRAPHY ===== */
+h1, h2, h3 {
+  font-family: var(--serif-font);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 0;
+  color: var(--accent-green);
+}
+
+h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  letter-spacing: -0.01em;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 400;
+  color: var(--text-muted);
+  max-width: 650px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* ===== 3. THE GRID SYSTEM ===== */
 .container {
-  width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
-/* Modifier for reading-focused pages (Perjalanan, Ruang Ilmu) */
-.reading-width {
-  max-width: 800px; 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 32px;
 }
 
-/* 3. RESPONSIVE HEADER (iPad & Mobile Proof) */
-header {
-  background-color: var(--bg-color);
-  border-bottom: 1px solid rgba(184, 161, 135, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+section {
+  border-top: 1px solid rgba(184, 161, 135, 0.2); /* Subtle gold divider */
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 32px;
 }
 
+.hero {
+  border-top: none;
+  padding-top: 60px;
+}
+
+/* ===== 4. COMPONENT PLACEMENT ===== */
+
+/* Hero */
+.hero h1 {
+  grid-column: 1 / span 10;
+}
+
+.hero-content {
+  grid-column: 1 / span 7;
+}
+
+/* Principles (Bento-style adjustment) */
+.principles-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.principle-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.3); /* Glassmorphism start */
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.principle-card:hover {
+  background: #ffffff;
+  border-color: var(--gold-accent);
+  transform: translateY(-5px);
+}
+
+.principle-card h3 {
+  font-size: 24px;
+  border-top: 1px solid var(--gold-accent);
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+.principle-card p {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* Guidance (Asymmetrical) */
+.guidance-section h2 {
+  grid-column: 1 / span 5;
+}
+
+.guidance-content {
+  grid-column: 1 / span 6;
+}
+
+.guidance-links {
+  grid-column: 8 / span 5;
+}
+
+.guidance-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.guidance-links li a {
+  display: block;
+  padding: 12px 0;
+  color: var(--text-main);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.guidance-links li a:hover {
+  padding-left: 10px;
+  color: var(--accent-green);
+}
+
+/* ===== 5. NAVIGATION ===== */
 .header-bar {
   display: flex;
-  flex-direction: column; /* Mobile Default: Stacked */
   align-items: center;
-  padding: 20px 0;
-  gap: 15px;
+  justify-content: space-between;
+  padding: 30px 0;
 }
 
 .logo {
   font-family: var(--serif-font);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--accent-green);
+  font-size: 20px;
   text-decoration: none;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  color: var(--accent-green);
+  font-weight: 600;
 }
-
-.logo span { color: var(--gold-accent); font-weight: 400; }
 
 nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
+  gap: 32px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap; /* Safety for small screens */
-  justify-content: center;
-}
-
-.nav-link {
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+nav a {
+  text-decoration: none;
   color: var(--text-main);
-  text-decoration: none;
-  opacity: 0.6;
-  transition: var(--transition);
-  padding-bottom: 4px;
-}
-
-.nav-link.active, .nav-link:hover {
-  opacity: 1;
-  color: var(--accent-green);
-}
-
-.nav-link.active {
-  border-bottom: 1.5px solid var(--gold-accent);
-}
-
-.nav-cta {
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  background-color: var(--accent-green);
-  color: #fff !important;
-  padding: 10px 24px;
-  border-radius: 2px; /* Architectural corners, not pill */
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-/* 4. TABLET & DESKTOP UPGRADES (768px+ - iPad Portrait) */
-@media (min-width: 768px) {
-  .header-bar {
-    flex-direction: row; /* iPad side-by-side */
-    justify-content: space-between;
-    padding: 30px 0;
-  }
-  
-  nav {
-    flex-direction: row;
-    width: auto;
-    gap: 30px;
-  }
-  
-  .logo { font-size: 1.4rem; }
-  .nav-link { font-size: 11px; }
-  .nav-cta { font-size: 11px; }
-}
-
-/* 5. TYPOGRAPHY SCALING */
-h1 {
-  font-family: var(--serif-font);
-  font-size: clamp(34px, 7vw, 72px);
-  line-height: 1.1;
-  color: var(--accent-green);
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-family: var(--serif-font);
-  font-size: clamp(26px, 4vw, 42px);
-  color: var(--accent-green);
-}
-
-.lead {
-  font-family: var(--serif-font);
-  font-style: italic;
-  font-size: clamp(18px, 2.5vw, 24px);
-  color: var(--gold-accent);
-  margin-bottom: 2rem;
-}
-
-/* 6. EDITORIAL COMPONENTS */
-section {
-  padding: 100px 0; /* Generous Premium Whitespace */
-}
-
-.line-accent {
-  width: 50px;
-  height: 1px;
-  background-color: var(--gold-accent);
-  margin-bottom: 20px;
-}
-
-footer {
-  padding: 60px 0;
-  text-align: center;
-  border-top: 1px solid rgba(184, 161, 135, 0.1);
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  opacity: 0.6;
+  transition: var(--transition);
+}
+
+nav a:hover, .nav-link.active {
+  color: var(--gold-accent);
+}
+
+/* ===== 6. CTA & FOOTER ===== */
+.cta-button {
+  display: inline-block;
+  background: var(--accent-green);
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 45px;
+  font-weight: 500;
+  border-radius: 50px; /* Modern Pill */
+  transition: var(--transition);
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background: #2D362D;
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(62, 75, 62, 0.15);
+}
+
+.footer-note {
+  border-top: 1px solid rgba(184, 161, 135, 0.2);
+  padding: 60px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ===== 7. MOBILE RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .grid, section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero h1, .hero-content, .guidance-section h2, .guidance-content, .guidance-links {
+    width: 100%;
+  }
+  
+  .guidance-links {
+    margin-top: 40px;
+  }
 }
