@@ -1,205 +1,268 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bercakap dengan Hairul | Perbualan Kewangan Patuh Syariah</title>
+    <meta name="description" content="Mulakan perbualan ringkas tanpa tekanan bersama Hairul. Ruang untuk memahami situasi keluarga anda sebelum sebarang komitmen dibuat.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <title>Bercakap dengan Hairul | Perbualan Kewangan Patuh Syariah</title>
-  <meta name="description" content="Mulakan perbualan ringkas tanpa tekanan bersama Hairul, perancang kewangan patuh Syariah. Ruang untuk memahami situasi keluarga anda sebelum sebarang komitmen dibuat.">
-
-  <!-- Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Core Styles -->
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Contact / Service Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Bercakap dengan Hairul",
-    "description": "Perbualan awal tanpa tekanan untuk memahami keperluan kewangan keluarga Muslim.",
-    "about": {
-      "@type": "ProfessionalService",
-      "name": "Perancangan Kewangan Patuh Syariah",
-      "provider": {
-        "@type": "Person",
-        "name": "Hairul Anuar",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Hairulanuar Financial"
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Bercakap dengan Hairul",
+      "description": "Perbualan awal tanpa tekanan untuk memahami keperluan kewangan keluarga Muslim.",
+      "about": {
+        "@type": "ProfessionalService",
+        "name": "Perancangan Kewangan Patuh Syariah",
+        "provider": {
+          "@type": "Person",
+          "name": "Hairul Anuar",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Hairulanuar Financial"
+          }
         }
       }
     }
-  }
-  </script>
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #F9F7F2;
+            --text-main: #2A2A2A;
+            --text-muted: #666666;
+            --accent-green: #3E4B3E;
+            --gold-accent: #B8A187;
+            --serif-font: 'Playfair Display', serif;
+            --sans-font: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Navigation */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(184, 161, 135, 0.15);
+        }
+
+        .logo {
+            font-family: var(--serif-font);
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: var(--accent-green);
+        }
+
+        nav { display: flex; gap: 32px; align-items: center; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--transition);
+        }
+
+        .nav-link.active { 
+            color: var(--accent-green); 
+            border-bottom: 1px solid var(--gold-accent); 
+            padding-bottom: 4px; 
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+        }
+
+        h1 {
+            font-family: var(--serif-font);
+            font-size: clamp(40px, 7vw, 64px);
+            font-weight: 400;
+            color: var(--accent-green);
+            margin-bottom: 24px;
+        }
+
+        .lead {
+            font-size: 1.5rem;
+            font-family: var(--serif-font);
+            font-style: italic;
+            color: var(--gold-accent);
+            margin-bottom: 40px;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 60px 0;
+            border-top: 1px solid rgba(184, 161, 135, 0.15);
+        }
+
+        h2 {
+            font-family: var(--serif-font);
+            font-size: 2.2rem;
+            color: var(--accent-green);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(184, 161, 135, 0.2);
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-accent);
+            transform: translateY(-3px);
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-family: var(--serif-font);
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .sign-off {
+            font-family: var(--serif-font);
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            color: var(--accent-green);
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(184, 161, 135, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-bar { flex-direction: column; gap: 20px; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= Header ================= -->
 <header>
   <div class="container">
     <div class="header-bar">
-      <a href="index.html" class="logo">
-        HAIRULANUAR<span>FINANCIAL</span>
-      </a>
-
+      <a href="index.html" class="logo">HAIRULANUAR<span>FINANCIAL</span></a>
       <nav>
-        <a href="index.html" class="nav-link">Panduan</a>
-        <a href="perjalanan.html" class="nav-link">Perjalanan</a>
-        <a href="ruang-ilmu.html" class="nav-link">Ruang Ilmu</a>
+        <a href="index.html">Panduan</a>
+        <a href="perjalanan.html">Perjalanan</a>
+        <a href="ruang-ilmu.html">Ruang Ilmu</a>
         <a href="bercakap.html" class="nav-link active">Bercakap</a>
-        <a href="https://wa.me/601127657730" class="nav-cta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </nav>
     </div>
   </div>
 </header>
 
-<!-- ================= Main ================= -->
 <main>
   <div class="container">
-    <div class="grid">
-
-      <!-- ===== Hero ===== -->
-      <section class="col-main">
-        <h1>Mulakan dengan Perbualan</h1>
-
-        <p class="lead">
-          Jika apa yang anda baca di laman ini terasa selari,
-          langkah seterusnya tidak perlu besar.
-          Kadang-kadang, satu perbualan sudah mencukupi.
-        </p>
-
-        <p>
-          Ia biasanya sekitar 15 minit.<br>
-          Tiada slaid. Tiada pembentangan. Tiada paksaan untuk membuat keputusan.
-        </p>
-
-        <p>
-          Tujuannya sekadar memberi ruang —
-          untuk memahami situasi keluarga anda
-          dan melihat sama ada pendekatan perancangan kewangan patuh Syariah ini sesuai.
-        </p>
-
-        <p class="entity-note">
-          Perbualan ini dikendalikan oleh Hairul,
-          perancang kewangan yang memfokuskan perlindungan keluarga,
-          pelaburan patuh Syariah, dan perancangan jangka panjang dengan tenang.
-        </p>
-      </section>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== How It Works ===== -->
-      <section class="col-main">
-        <h2>Bagaimana Perbualan Ini Biasanya Berlaku</h2>
-
-        <p>
-          Selalunya ia bermula dengan mesej ringkas di WhatsApp.
-          Kita tetapkan masa yang sesuai,
-          kemudian berbual secara santai dan jujur.
-        </p>
-
-        <p>
-          Anda berkongsi sedikit tentang situasi dan persoalan yang bermain di fikiran.
-          Saya mendengar, menjawab apa yang boleh,
-          dan menerangkan langkah seterusnya jika memang relevan.
-        </p>
-
-        <p>
-          Di hujung perbualan,
-          kita sama-sama jelas sama ada wajar untuk meneruskan —
-          atau cukup setakat itu. Kedua-duanya tidak mengapa.
-        </p>
-      </section>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== Contact ===== -->
-      <section class="col-main">
-        <h2>Hubungi Hairul</h2>
-
-        <p>
-          <strong>WhatsApp (cara paling mudah)</strong><br>
-          <a href="https://wa.me/601127657730" class="cta-button" target="_blank" rel="noopener noreferrer">
-            WhatsApp Hairul
-          </a><br>
-          <span class="cta-note">Biasanya dibalas dalam beberapa jam pada hari bekerja.</span>
-        </p>
-
-        <p>
-          <strong>E-mel</strong><br>
-          <a href="mailto:hairul.financial@gmail.com">hairul.financial@gmail.com</a>
-        </p>
-      </section>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== FAQ ===== -->
-      <section class="col-main">
-        <h2>Beberapa Soalan Lazim</h2>
-
-        <p>
-          <strong>Adakah perbualan ini benar-benar tanpa bayaran dan tanpa ikatan?</strong><br>
-          Ya. Ini hanyalah ruang untuk saling memahami kesesuaian.
-          Tiada cadangan produk atau keputusan perlu dibuat.
-        </p>
-
-        <p>
-          <strong>Perlukah saya sediakan apa-apa?</strong><br>
-          Tidak. Cukup sekadar tahu perkara kewangan keluarga
-          yang paling ingin anda fahami atau susun.
-        </p>
-
-        <p>
-          <strong>Bagaimana jika saya belum bersedia?</strong><br>
-          Itu perkara biasa.
-          Anda boleh terus membaca dan mengikuti perkongsian di sini
-          tanpa sebarang kewajipan untuk menghubungi.
-        </p>
-      </section>
-
-      <section class="col-main">
-        <p>
-          Jika dan bila anda bersedia untuk berbual,<br>
-          saya sedia mendengar.
-        </p>
-        <p>— Hairul</p>
-      </section>
-
-    </div>
-  </div>
-
-  <!-- ===== CTA ===== -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="grid">
-        <div class="col-main">
-          <h2>Sedia untuk berbual?</h2>
-          <p>
-            Satu perbualan ringkas
-            untuk memahami di mana anda berada
-            dan apa yang penting untuk keluarga anda.
-          </p>
-          <a href="https://wa.me/601127657730" class="cta-button" target="_blank" rel="noopener noreferrer">
-            WhatsApp Hairul
-          </a>
+    <section style="border:none;">
+        <div class="hero">
+            <h1>Mulakan dengan Perbualan.</h1>
+            <p class="lead">Jika apa yang anda baca di laman ini terasa selari, langkah seterusnya tidak perlu besar.</p>
+            <p>Kadang-kadang, satu perbualan sudah mencukupi. Ia biasanya sekitar 15 minit. Tiada slaid. Tiada pembentangan. Tiada paksaan untuk membuat keputusan.</p>
+            <p style="margin-top:20px; font-size: 0.95rem; color: var(--text-muted);">Tujuannya sekadar memberi ruang — untuk memahami situasi keluarga anda dan melihat sama ada pendekatan ini sesuai.</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
+
+    <section>
+        <h2>Bagaimana ia berlaku?</h2>
+        <p>Selalunya ia bermula dengan mesej ringkas di WhatsApp. Kita tetapkan masa yang sesuai, kemudian berbual secara santai dan jujur.</p>
+        <p>Anda berkongsi sedikit tentang situasi dan persoalan yang bermain di fikiran. Saya mendengar, menjawab apa yang boleh, dan menerangkan langkah seterusnya jika memang relevan.</p>
+        <p>Di hujung perbualan, kita sama-sama jelas sama ada wajar untuk meneruskan — atau cukup setakat itu. Kedua-duanya tidak mengapa.</p>
+    </section>
+
+    <section>
+        <h2>Hubungi Hairul</h2>
+        <div class="contact-info">
+            <p><strong>WhatsApp (Cara paling mudah)</strong></p>
+            <a href="https://wa.me/601127657730" class="cta-button">WhatsApp Hairul</a>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Biasanya dibalas dalam beberapa jam pada hari bekerja.</p>
+            
+            <p style="margin-top:30px;"><strong>E-mel</strong></p>
+            <p><a href="mailto:hairul.financial@gmail.com" style="color: var(--accent-green); font-weight: 500;">hairul.financial@gmail.com</a></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Soalan Lazim</h2>
+        
+        <div class="faq-item">
+            <strong>Adakah perbualan ini benar-benar tanpa bayaran?</strong>
+            <p>Ya. Ini hanyalah ruang untuk saling memahami kesesuaian. Tiada cadangan produk atau keputusan perlu dibuat dalam sesi awal ini.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Perlukah saya sediakan apa-apa?</strong>
+            <p>Tidak. Cukup sekadar tahu perkara kewangan keluarga yang paling ingin anda fahami atau susun.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Bagaimana jika saya belum bersedia?</strong>
+            <p>Itu perkara biasa. Anda boleh terus membaca dan mengikuti perkongsian di sini tanpa sebarang kewajipan untuk menghubungi.</p>
+        </div>
+
+        <p>Jika dan bila anda bersedia untuk berbual, saya sedia mendengar.</p>
+        <p class="sign-off">— Hairul</p>
+    </section>
+  </div>
 </main>
 
-<!-- ================= Footer ================= -->
 <footer>
   <div class="container">
-    <p class="footer-note">
-      &copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.
-    </p>
+    <p>&copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.</p>
   </div>
 </footer>
 
