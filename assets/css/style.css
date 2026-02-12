@@ -1,5 +1,5 @@
 /* Project: Hairulanuar Financial - 2026 Premium Refresh
-   Version: 2.1 (iPad & Mobile Rectification)
+   Version: 3.0 (Master Layout Symmetry: 1100px Header / 900px Content)
 */
 
 :root {
@@ -23,24 +23,30 @@ body {
   line-height: 1.8;
 }
 
-/* ===== TYPOGRAPHY RECTIFIED ===== */
-h1 {
-  font-family: var(--serif-font);
-  font-size: clamp(32px, 6vw, 64px); /* Slightly smaller for tablets */
-  color: var(--accent-green);
-  margin-bottom: 20px;
-  line-height: 1.1;
+/* ===== 1. LAYOUT CONTAINERS (The Logic) ===== */
+
+/* Use this for <header> on ALL pages */
+.container-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-.lead {
-  font-size: clamp(18px, 2.5vw, 22px);
-  font-family: var(--serif-font);
-  font-style: italic;
-  color: var(--gold-accent);
-  margin-bottom: 30px;
+/* Use this for <main> content on index.html */
+.container-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-/* ===== HEADER RECTIFICATION (The "Off" Part) ===== */
+/* Use this for <main> content on Perjalanan, Ruang Ilmu, & Bercakap */
+.container-reading {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ===== 2. HEADER & NAVIGATION (1100px Alignment) ===== */
 header {
   border-bottom: 1px solid rgba(184, 161, 135, 0.15);
   background: var(--bg-color);
@@ -53,12 +59,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0; /* Tighter padding for tablets */
+  padding: 25px 0;
 }
 
 .logo {
   font-family: var(--serif-font);
-  font-size: 18px; /* Scaled down logo for mobile/tablet */
+  font-size: 18px;
   text-decoration: none;
   color: var(--accent-green);
   font-weight: 600;
@@ -66,26 +72,26 @@ header {
   flex-shrink: 0;
 }
 
-.logo span { font-weight: 400; color: var(--gold-accent); }
+.logo span { font-weight: 400; color: var(--gold-accent); opacity: 0.7; }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 25px; /* Reduced gap for horizontal fit */
+  gap: 35px;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-main);
-  font-size: 11px; /* Smaller, sharper font for tablet nav */
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   opacity: 0.6;
   transition: var(--transition);
   position: relative;
@@ -111,7 +117,7 @@ nav {
   background: var(--accent-green);
   color: #fff !important;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 24px;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -119,49 +125,60 @@ nav {
   transition: var(--transition);
 }
 
-/* ===== CONTAINER ===== */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* ===== 3. TYPOGRAPHY ===== */
+h1 {
+  font-family: var(--serif-font);
+  font-size: clamp(36px, 6vw, 68px);
+  color: var(--accent-green);
+  margin-bottom: 24px;
+  line-height: 1.1;
 }
 
-/* ===== MEDIA QUERIES FOR TABLET/IPAD (CRITICAL) ===== */
+h2 {
+  font-family: var(--serif-font);
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--accent-green);
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-family: var(--serif-font);
+  font-style: italic;
+  color: var(--gold-accent);
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+/* ===== 4. CONTENT BLOCKS ===== */
+section {
+  padding: 80px 0;
+  border-top: 1px solid rgba(184, 161, 135, 0.1);
+}
+
+section:first-of-type { border-top: none; }
+
+article {
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(184, 161, 135, 0.1);
+}
+
+/* ===== 5. IPAD & MOBILE FIXES ===== */
 @media (max-width: 1024px) {
-  /* This targets iPad Pro and iPad Air specifically */
-  .header-bar {
-    padding: 15px 0;
-  }
-  
-  nav {
-    gap: 15px;
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .logo {
-      font-size: 16px;
-  }
+  .header-bar { padding: 20px 0; }
+  nav { gap: 20px; }
+  .nav-links { gap: 15px; }
 }
 
 @media (max-width: 850px) {
-  /* This targets iPad Mini and smaller tablets */
   .header-bar {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     text-align: center;
-  }
-  
-  .nav-links {
-    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  /* Mobile Phone specific */
-  .nav-links {
-    display: none; /* In a future update, we can add a hamburger menu here */
-  }
+  .nav-links { display: none; } /* Mobile hides links to prevent clutter */
 }
