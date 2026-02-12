@@ -1,203 +1,277 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Ilmu: Prinsip Kewangan Patuh Syariah | Hairulanuar Financial</title>
+    <meta name="description" content="Himpunan tulisan dan renungan Hairulanuar Financial tentang kewangan patuh Syariah — perlindungan, pelaburan, dan keputusan yang dibina dengan prinsip.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <title>Ruang Ilmu: Prinsip Kewangan Patuh Syariah | Hairulanuar Financial</title>
-  <meta name="description" content="Ruang Ilmu menghimpunkan tulisan dan renungan Hairulanuar Financial tentang kewangan patuh Syariah — perlindungan, pelaburan, dan keputusan kewangan yang dibina dengan prinsip dan ketenangan." />
+    <style>
+        :root {
+            --bg-color: #F9F7F2;
+            --text-main: #2A2A2A;
+            --text-muted: #666666;
+            --accent-green: #3E4B3E;
+            --gold-accent: #B8A187;
+            --serif-font: 'Playfair Display', serif;
+            --sans-font: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-  <!-- Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <!-- Core Styles -->
-  <link rel="stylesheet" href="assets/css/style.css">
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <!-- Knowledge Hub Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Ruang Ilmu",
-    "description": "Himpunan pandangan dan tulisan tentang kewangan patuh Syariah untuk keluarga Muslim.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Hairulanuar Financial",
-      "url": "https://hairulanuarfinancial.github.io/"
-    }
-  }
-  </script>
+        .container {
+            max-width: 850px; /* Narrower for better reading experience */
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Navigation */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(184, 161, 135, 0.15);
+        }
+
+        .logo {
+            font-family: var(--serif-font);
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: var(--accent-green);
+        }
+
+        nav { display: flex; gap: 32px; align-items: center; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--transition);
+        }
+
+        .nav-link.active { 
+            color: var(--accent-green); 
+            border-bottom: 1px solid var(--gold-accent); 
+            padding-bottom: 4px; 
+        }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: var(--serif-font);
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 400;
+            color: var(--accent-green);
+            margin-bottom: 24px;
+        }
+
+        .lead {
+            font-size: 1.4rem;
+            font-family: var(--serif-font);
+            font-style: italic;
+            color: var(--gold-accent);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Article List Style */
+        .article-feed {
+            margin-bottom: 100px;
+        }
+
+        article {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(184, 161, 135, 0.15);
+            transition: var(--transition);
+        }
+
+        article:last-child { border-bottom: none; }
+
+        article h2 {
+            font-family: var(--serif-font);
+            font-size: 2rem;
+            line-height: 1.3;
+            color: var(--accent-green);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        article p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .read-more {
+            font-family: var(--serif-font);
+            font-style: italic;
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--accent-green);
+            transform: translateX(5px);
+        }
+
+        /* CTA Section */
+        .journal-cta {
+            background-color: white;
+            padding: 80px 40px;
+            border-radius: 40px;
+            text-align: center;
+            border: 1px solid rgba(184, 161, 135, 0.2);
+            margin-bottom: 100px;
+        }
+
+        .journal-cta h2 {
+            font-family: var(--serif-font);
+            font-size: 2.2rem;
+            color: var(--accent-green);
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            font-weight: 600;
+            padding: 18px 48px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(62, 75, 62, 0.1);
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        @media (max-width: 768px) {
+            .header-bar { flex-direction: column; gap: 20px; }
+            h1 { font-size: 3rem; }
+            article h2 { font-size: 1.7rem; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= Header ================= -->
 <header>
   <div class="container">
     <div class="header-bar">
-      <a href="index.html" class="logo">
-        HAIRULANUAR<span>FINANCIAL</span>
-      </a>
-
+      <a href="index.html" class="logo">HAIRULANUAR<span>FINANCIAL</span></a>
       <nav>
-        <a href="index.html" class="nav-link">Panduan</a>
-        <a href="perjalanan.html" class="nav-link">Perjalanan</a>
+        <a href="index.html">Panduan</a>
+        <a href="perjalanan.html">Perjalanan</a>
         <a href="ruang-ilmu.html" class="nav-link active">Ruang Ilmu</a>
-        <a href="bercakap.html" class="nav-link">Bercakap</a>
-        <a href="https://wa.me/601127657730" class="nav-cta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://wa.me/601127657730" class="nav-cta">WhatsApp</a>
       </nav>
     </div>
   </div>
 </header>
 
-<!-- ================= Main ================= -->
 <main>
   <div class="container">
-    <div class="grid">
-
-      <!-- ===== Hero ===== -->
-      <section class="col-main">
+    <section class="hero">
         <h1>Ruang Ilmu</h1>
+        <p class="lead">Tempat untuk berfikir perlahan.</p>
+        <p style="color: var(--text-muted);">Di sini kami berkongsi prinsip yang kekal relevan apabila hidup berubah — membantu anda memahami kewangan sebagai satu amanah jangka panjang.</p>
+    </section>
 
-        <p class="lead">
-          Tempat untuk berfikir perlahan.<br>
-          Di sini kami berkongsi pandangan tentang kewangan patuh Syariah — bukan berita pasaran yang cepat berlalu, tetapi prinsip yang kekal relevan apabila hidup berubah.
-        </p>
+    <section class="article-feed">
+        <article>
+            <h2>Takaful bukan untuk anda. Ia untuk mereka yang anda tinggalkan.</h2>
+            <p>Takaful Keluarga mengalihkan fokus daripada diri yang sementara kepada tanggungjawab yang kekal. Ia memastikan kehidupan keluarga tidak runtuh apabila diuji.</p>
+            <a href="/artikel/takaful-bukan-untuk-anda.html" class="read-more">Teruskan membaca →</a>
+        </article>
 
-        <p>
-          Setiap tulisan lahir daripada renungan dan pengalaman.
-          Tujuannya bukan untuk mendorong tindakan pantas,
-          tetapi untuk membantu anda memahami dengan lebih tenang.
-        </p>
+        <article>
+            <h2>Sebelum kita bercakap tentang produk</h2>
+            <p>Produk ialah alat, manakala perancangan ialah struktur. Sebelum memilih alat, kita perlu faham bagaimana cara kita berfikir dan membuat keputusan.</p>
+            <a href="/artikel/sebelum-kita-bercakap-tentang-produk.html" class="read-more">Teruskan membaca →</a>
+        </article>
 
-        <!-- Entity clarity -->
-        <p class="entity-note">
-          Ruang Ilmu mencerminkan pendekatan Hairulanuar Financial
-          dalam membimbing keluarga Muslim memahami kewangan sebagai satu amanah jangka panjang.
-        </p>
-      </section>
+        <article>
+            <h2>Memahami saringan, bukan mengejar harga.</h2>
+            <p>Portfolio pelaburan bukan sekadar alat pengumpulan kekayaan. Ia adalah cerminan nilai dan etika yang anda pilih untuk sokong melalui pelaburan patuh Syariah.</p>
+            <a href="/artikel/memahami-saringan.html" class="read-more">Teruskan membaca →</a>
+        </article>
 
-      <div class="col-full"><hr></div>
+        <article>
+            <h2>Dari membina, kepada mengurus, kepada memberi.</h2>
+            <p>Persaraan bukan penamat, tetapi satu peralihan daripada pembina kekayaan kepada penjaga, dan akhirnya, pemberi yang meninggalkan legasi bermakna.</p>
+            <a href="/artikel/merancang-persaraan-with-niat.html" class="read-more">Teruskan membaca →</a>
+        </article>
 
-      <!-- ===== Articles ===== -->
+        <article>
+            <h2>Mengapa pendekatan yang membosankan sering kali yang paling bijak.</h2>
+            <p>Dunia kewangan gemar cerita pantas. Kadang-kadang, strategi terbaik ialah strategi yang membolehkan anda berhenti memikirkannya dan fokus kepada kehidupan.</p>
+            <a href="/artikel/kewangan-yang-membosankan.html" class="read-more">Teruskan membaca →</a>
+        </article>
 
-      <article class="col-main">
-        <h2>Takaful bukan untuk anda. Ia untuk mereka yang anda tinggalkan.</h2>
-        <p>Kebanyakan perbualan kewangan bermula dengan satu soalan: “Apa yang saya boleh dapat?”</p>
-        <p>Takaful Keluarga mengemukakan soalan yang berbeza: “Apa yang akan berlaku kepada mereka, apabila saya tiada?”</p>
-        <p>
-          Perubahan soalan ini mengubah segalanya.<br>
-          Ia mengalihkan fokus daripada diri yang sementara kepada tanggungjawab yang kekal.
-        </p>
-        <p><a href="/artikel/takaful-bukan-untuk-anda.html" class="cta-button">→ Teruskan membaca</a></p>
-      </article>
+        <article>
+            <h2>Kenapa sesetengah orang rasa takaful “tak berfungsi”?</h2>
+            <p>Isu sebenar selalunya bukan pada takaful itu sendiri, tetapi pada bagaimana ia difahami, disusun, dan diuruskan sejak awal perjalanan kewangan anda.</p>
+            <a href="/artikel/kenapa-takaful-tak-berfungsi.html" class="read-more">Teruskan membaca →</a>
+        </article>
+    </section>
 
-      <div class="col-full"><hr></div>
-
-      <article class="col-main">
-        <h2>Sebelum kita bercakap tentang produk</h2>
-        <p>Ramai orang datang bertanya tentang pelaburan dan perlindungan.</p>
-        <p>
-          Tetapi sebelum bercakap tentang produk,<br>
-          ada perkara yang lebih penting:<br>
-          cara kita berfikir dan membuat keputusan kewangan.
-        </p>
-        <p>
-          Produk ialah alat.<br>
-          Perancangan ialah struktur.
-        </p>
-        <p><a href="/artikel/sebelum-kita-bercakap-tentang-produk.html" class="cta-button">→ Teruskan membaca</a></p>
-      </article>
-
-      <div class="col-full"><hr></div>
-
-      <article class="col-main">
-        <h2>Memahami saringan, bukan mengejar harga.</h2>
-        <p>Ramai yang bertanya, “Saham mana yang naik?” sebelum bertanya, “Bagaimana ia dijana?”</p>
-        <p>
-          Portfolio bukan sekadar alat pengumpulan kekayaan.<br>
-          Ia adalah cerminan nilai yang anda pilih untuk sokong.
-        </p>
-        <p><a href="/artikel/memahami-saringan.html" class="cta-button">→ Teruskan membaca</a></p>
-      </article>
-
-      <div class="col-full"><hr></div>
-
-      <article class="col-main">
-        <h2>Dari membina, kepada mengurus, kepada memberi.</h2>
-        <p>Persaraan bukan penamat, tetapi satu peralihan.</p>
-        <p>
-          Daripada pembina, kepada penjaga,
-          dan akhirnya, pemberi.
-        </p>
-        <p><a href="/artikel/merancang-persaraan-dengan-niat.html" class="cta-button">→ Teruskan membaca</a></p>
-      </article>
-
-      <div class="col-full"><hr></div>
-
-      <article class="col-main">
-        <h2>Mengapa pendekatan yang membosankan sering kali yang paling bijak.</h2>
-        <p>Dunia kewangan gemar cerita pantas dan jalan singkat.</p>
-        <p>
-          Kadang-kadang, strategi terbaik
-          ialah yang membolehkan anda berhenti memikirkannya.
-        </p>
-        <p><a href="/artikel/kewangan-yang-membosankan.html" class="cta-button">→ Teruskan membaca</a></p>
-      </article>
-
-      <div class="col-full"><hr></div>
-
-      <article class="col-main">
-        <h2>Kenapa sesetengah orang rasa takaful “tak berfungsi”?</h2>
-        <p>
-          Selalunya, isu sebenar bukan pada takaful —
-          tetapi pada bagaimana ia difahami dan disusun sejak awal.
-        </p>
-        <p><a href="/artikel/kenapa-takaful-tak-berfungsi.html" class="cta-button">→ Teruskan membaca</a></p>
-      </article>
-
-      <div class="col-full"><hr></div>
-
-      <article class="col-main">
-        <h2>Mengapa kami berkongsi secara terbuka</h2>
-        <p>
-          Kami berkongsi kerana kefahaman itu penting.
-          Keputusan yang dibuat dengan faham selalunya lebih bertahan lama.
-        </p>
-        <p>
-          Sesetengah orang akan rasa selari.
-          Yang lain akan berlalu.
-          Kedua-duanya tidak mengapa.
-        </p>
-      </article>
-
-      <div class="col-full"><hr></div>
-
-      <!-- ===== CTA ===== -->
-      <section class="col-main cta-section">
-        <h2>Jika sesuatu di sini membuatkan anda berhenti sejenak</h2>
-        <p>
-          Kadang-kadang, satu bacaan kecil
-          membangkitkan soalan besar tentang keluarga sendiri.
-        </p>
-        <a href="https://wa.me/601127657730" target="_blank" class="cta-button">
-          WhatsApp untuk bertanya
-        </a>
-        <p class="cta-note">Tiada tekanan. Tiada skrip.</p>
-      </section>
-
-    </div>
+    <section class="journal-cta">
+        <h2>Ingin berbincang lebih lanjut?</h2>
+        <p style="margin-bottom: 30px; color: var(--text-muted);">Jika tulisan di sini membangkitkan soalan tentang perancangan keluarga anda, mari mulakan perbualan yang tenang.</p>
+        <a href="https://wa.me/601127657730" class="cta-button">Hubungi Hairul di WhatsApp</a>
+    </section>
   </div>
 </main>
 
-<!-- ================= Footer ================= -->
 <footer>
   <div class="container">
-    <p class="footer-note">
-      &copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.
-    </p>
+    <p>&copy; 2026 Hairulanuar Financial. Prinsip. Amanah. Ketenangan.</p>
   </div>
 </footer>
 
