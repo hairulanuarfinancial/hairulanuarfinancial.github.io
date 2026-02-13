@@ -1,7 +1,15 @@
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Open hand -->
-  <path d="M4 16C4 16 7 12 12 12C17 12 20 16 20 16" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="12" cy="8" r="6" fill="url(#premiumGradient)" stroke="#C5A059" stroke-width="0.5"/>
   
-  <!-- Circle representing care/holding -->
-  <circle cx="12" cy="10" r="3" stroke="#1C1C1C" stroke-width="1.5"/>
+  <path d="M10 5C10.5 4.5 11.5 4.2 13 4.5" stroke="white" stroke-width="0.8" stroke-linecap="round" opacity="0.6"/>
+
+  <path d="M4 18C4 18 6 15 9 14.5C11 14.2 13 15 15 14C17 13 18.5 11 18.5 11C18.5 11 21 12.5 19 15C17.5 16.8 14 19 11 20C8 21 4 20.5 4 18Z" fill="#C5A059"/>
+  <path d="M15 14C16.5 13.5 18 13 19 12" stroke="#F4F1EA" stroke-width="0.5" stroke-linecap="round"/>
+
+  <defs>
+    <linearGradient id="premiumGradient" x1="12" y1="2" x2="12" y2="14" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0E6ED" />
+      <stop offset="1" stop-color="#B0BCCB" />
+    </linearGradient>
+  </defs>
 </svg>
