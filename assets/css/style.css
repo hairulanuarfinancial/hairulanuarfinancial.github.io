@@ -130,6 +130,27 @@ nav .nav-link.active {
   margin: 0 auto 2.5rem;
 }
 
+.hero {
+  padding: 120px 0 60px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 72px);
+  line-height: 1.1;
+  color: #3E4B3E;
+  margin-bottom: 24px;
+}
+
+.hero .lead {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #B8A187;
+  max-width: 650px;
+}
+
 /* ==================== Typography ==================== */
 h2 {
   font-family: 'Cormorant Garamond', serif;
