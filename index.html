@@ -6,18 +6,18 @@
 <title>Hairul | Protecting Legacy. Defining Future.</title>
 <meta name="description" content="Boutique financial advisory for business owners and families seeking clarity, stewardship, and structured protection aligned with Shariah principles.">
 
-<!-- Typography -->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- CSS -->
+<!-- Master CSS -->
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body class="home">
 
-<!-- ================= Header ================= -->
+<!-- ================= HEADER ================= -->
 <header id="site-header">
   <div class="container">
     <div class="header-bar">
@@ -36,17 +36,17 @@
 <main>
   <div class="container grid">
 
-    <!-- Hero -->
-    <section class="col-main hero-section">
+    <!-- ================= HERO ================= -->
+    <section class="col-main hero center">
       <h1>Protecting Legacy. Defining Future.</h1>
-      <p>Your boutique advisory for business owners and families who value thoughtful financial structure and long-term stewardship.</p>
+      <p class="lead">Your boutique advisory for business owners and families who value thoughtful financial structure and long-term stewardship.</p>
       <a href="#contact" class="cta-button">Begin a Conversation</a>
     </section>
 
     <div class="col-full"><hr></div>
 
-    <!-- Philosophy -->
-    <section class="col-main">
+    <!-- ================= PHILOSOPHY ================= -->
+    <section class="col-main reading-width">
       <h2>Our Philosophy</h2>
       <p>We focus on <img src="/assets/icons/clarity.svg" class="value-icon" alt="Clarity">clarity, <img src="/assets/icons/stewardship.svg" class="value-icon" alt="Stewardship">stewardship, and <img src="/assets/icons/continuity.svg" class="value-icon" alt="Continuity">continuity in every plan.</p>
       <p>We start with understanding, not products. Decisions are made deliberately, with care and foresight.</p>
@@ -54,8 +54,8 @@
 
     <div class="col-full"><hr></div>
 
-    <!-- Who We Work With -->
-    <section class="col-main">
+    <!-- ================= WHO WE WORK WITH ================= -->
+    <section class="col-main reading-width">
       <h2>Who We Work With</h2>
       <ul>
         <li>Business owners and families seeking thoughtful guidance</li>
@@ -66,8 +66,8 @@
 
     <div class="col-full"><hr></div>
 
-    <!-- Insights / Articles -->
-    <section class="col-main">
+    <!-- ================= INSIGHTS / ARTICLES ================= -->
+    <section class="col-main reading-width">
       <h2>Insights & Reflections</h2>
 
       <article class="fade-in">
@@ -89,27 +89,26 @@
 
     <div class="col-full"><hr></div>
 
-    <!-- CTA Section -->
+    <!-- ================= CTA SECTION ================= -->
     <section class="col-main cta-section" id="contact">
       <h2>If This Feels Aligned</h2>
       <p>Conversations begin when you’re ready. No obligations. No pressure.</p>
-      <a href="/bercakap.html" class="cta-button">Begin a Conversation</a>
+      <a href="/conversations.html" class="cta-button">Begin a Conversation</a>
       <p class="cta-note">(When you are ready.)</p>
     </section>
 
   </div>
 </main>
 
-<!-- ================= Footer ================= -->
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
     <p>&copy; 2026 Hairul. Thoughtful Structure. Stewardship. Clarity.</p>
   </div>
 </footer>
 
-<!-- ================= Scripts ================= -->
+<!-- ================= SCRIPTS ================= -->
 <script>
-// Scroll fade-in animation
 const articles = document.querySelectorAll('article.fade-in');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -118,7 +117,7 @@ const observer = new IntersectionObserver(entries => {
 }, {threshold:0.15});
 articles.forEach(a => observer.observe(a));
 
-// Invisible header on scroll down
+// Hide header on scroll down
 let lastScroll = 0;
 const header = document.getElementById('site-header');
 window.addEventListener('scroll', () => {
