@@ -232,6 +232,21 @@ article h3 {
 
 .value-icon:hover { opacity: 1; }
 
+/* ==================== Phase / Section Icons ==================== */
+.phase-header img {
+  width: 32px;       /* standardized width */
+  height: 32px;      /* standardized height */
+  vertical-align: middle;
+  margin-right: 12px; /* space between icon and stage text */
+}
+.phase-number {
+  font-weight: 600;
+  color: var(--accent-green);
+  font-family: var(--serif-font);
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
 /* ==================== CTA Sections ==================== */
 .cta-section {
   background-color: var(--bg-color);
